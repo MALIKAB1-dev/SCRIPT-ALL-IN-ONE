@@ -2131,4 +2131,4787 @@ clearReset()
 end
 
 
+function chromemenu()
+  local menu = { 
+     " CHROME CAR ",
+     " CHROME WHEEL ",
+     " CHROME HEADLIGHT ",
+     " CHROME CALIPER ", 
+     " CUSTOM CHROME CAR ", 
+     " CUSTOM CHROME WHEEL ",
+     " CUSTOM CHROME HEADLIGHT ",
+     " CUSTOM CHROME CALIPER ", 
+     " ❌ B A C K ❌ ",
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇨 🇭 🇷 🇴 🇲 🇪    🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
 
+   if choice[1] then chromecar() end
+   if choice[2] then chromewheel() end
+   if choice[3] then chromeheadlight() end
+   if choice[4] then chromecaliper() end
+   if choice[5] then customchromecar() end
+   if choice[6] then customchromewheel() end
+   if choice[7] then customchromeheadlight() end
+   if choice[8] then customchromecaliper() end
+   if choice[9] then backMenu() end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+ 
+function chromecar() -- chrome car
+gg.setVisible(false)
+gg.alert("OPEN CAR COLOR SECTION THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchValue("4251398048237748224", 32, nil)
+if results then
+offsetData(results, 0xCC, 32)
+results = searchValue("2", 32, nil)
+if results then
+
+local offsets = {-0x68, -0x64, -0x60}
+local modifiedResults = {}
+
+for _, offset in ipairs(offsets) do
+for i, result in ipairs(results) do
+local newResult = {
+address = result.address + offset,
+flags = 16,
+value = -99
+}
+table.insert(modifiedResults, newResult)
+end
+end
+
+gg.setValues(modifiedResults)
+gg.toast("ON")
+clearReset()
+end
+end
+end
+
+function chromewheel() -- chrome wheel 
+gg.setVisible(false)
+gg.alert("OPEN CAR COLOR SECTION THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchValue("4287426845256712192", 32, nil)
+if results then
+offsetData(results, 0x15C, 32)
+results = searchValue("2", 32, nil)
+if results then
+
+local offsets = {-0x58, -0x54, -0x50}
+local modifiedResults = {}
+
+for _, offset in ipairs(offsets) do
+for i, result in ipairs(results) do
+local newResult = {
+address = result.address + offset,
+flags = 16,
+value = -99
+}
+table.insert(modifiedResults, newResult)
+end
+end
+
+gg.setValues(modifiedResults)
+gg.toast("ON")
+clearReset()
+end
+end
+end
+
+function chromeheadlight() -- chrome headlight
+gg.setVisible(false)
+gg.alert("GO TO HEADLIGHT AND SLIDE UP THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("1", 16)
+gg.getResults(9999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+local choice = gg.alert("PUT YOUR COLOR CODE THEN CLICK GG LOGO","GET COLOR CODE","OK")
+if choice == 1 then
+    local menu = gg.choice({
+    " RED: #FF0000 ", -- 1
+    " BLUE: #0000FF ", -- 2
+    " CYAN BLUE: #00FFFF ", -- 3
+    " GREEN: #00FF00 ", -- 4
+    " YELLOW: #FFFF00 ", -- 5
+    " ORANGE: #FF9900 ", -- 6
+    " PURPLE: #9900FF ", -- 7
+    " PINK: #FF00FF ", -- 8
+    " WHITE: #FFFFFF ", -- 9
+    }, nil, "CLICK ON COLOR CODE FOR COPIE")
+    if menu == 1 then
+    gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF0000") end
+    if menu == 2 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#0000FF") end
+    if menu == 3 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FFFF") end
+    if menu == 4 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FF00") end
+    if menu == 5 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFF00") end
+    if menu == 6 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF9900") end
+    if menu == 7 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#9900FF") end
+    if menu == 8 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF00FF") end
+    if menu == 9 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFFFF") end
+end
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.refineNumber("1", 16)
+gg.getResults(9999)
+gg.editAll("9", 16)
+gg.toast("ON")
+clearReset()
+end
+
+function chromecaliper() -- chrome caliper
+gg.setVisible(false)
+gg.alert("GO TO CALIPER AND SLIDE UP THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("1", 16)
+gg.getResults(9999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+local choice = gg.alert("PUT YOUR COLOR CODE THEN CLICK GG LOGO","GET COLOR CODE","OK")
+if choice == 1 then
+    local menu = gg.choice({
+    " RED: #FF0000 ", -- 1
+    " BLUE: #0000FF ", -- 2
+    " CYAN BLUE: #00FFFF ", -- 3
+    " GREEN: #00FF00 ", -- 4
+    " YELLOW: #FFFF00 ", -- 5
+    " ORANGE: #FF9900 ", -- 6
+    " PURPLE: #9900FF ", -- 7
+    " PINK: #FF00FF ", -- 8
+    " WHITE: #FFFFFF ", -- 9
+    }, nil, "CLICK ON COLOR CODE FOR COPIE")
+    if menu == 1 then
+    gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF0000") end
+    if menu == 2 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#0000FF") end
+    if menu == 3 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FFFF") end
+    if menu == 4 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FF00") end
+    if menu == 5 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFF00") end
+    if menu == 6 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF9900") end
+    if menu == 7 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#9900FF") end
+    if menu == 8 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF00FF") end
+    if menu == 9 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFFFF") end
+end
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.refineNumber("1", 16)
+gg.getResults(9999)
+gg.editAll("9", 16)
+gg.toast("ON")
+clearReset()
+end
+
+function customchromecar() -- custom chrome car
+gg.setVisible(false)
+d = gg.prompt({
+ " CUSTOM CHROME CAR : ",
+ " BACK ",
+},nil,{
+ "number",
+ "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "chromemenu"
+chromemenu()
+end
+
+gg.setVisible(false)
+gg.alert("OPEN CAR COLOR SECTION THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchValue("4251398048237748224", 32, nil)
+if results then
+offsetData(results, 0xCC, 32)
+results = searchValue("2", 32, nil)
+if results then
+
+local offsets = {-0x68, -0x64, -0x60}
+local modifiedResults = {}
+
+for _, offset in ipairs(offsets) do
+for i, result in ipairs(results) do
+local newResult = {
+address = result.address + offset,
+flags = 16,
+value = d[1]
+}
+table.insert(modifiedResults, newResult)
+end
+end
+
+gg.setValues(modifiedResults)
+gg.toast("ON")
+clearReset()
+end
+end
+end
+
+function customchromewheel() -- custom chrome wheel
+gg.setVisible(false)
+d = gg.prompt({
+ " CUSTOM CHROME WHEEL : ",
+ " BACK ",
+},nil,{
+ "number",
+ "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "chromemenu"
+chromemenu()
+end
+
+gg.setVisible(false)
+gg.alert("OPEN CAR COLOR SECTION THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchValue("4287426845256712192", 32, nil)
+if results then
+offsetData(results, 0x15C, 32)
+results = searchValue("2", 32, nil)
+if results then
+
+local offsets = {-0x58, -0x54, -0x50}
+local modifiedResults = {}
+
+for _, offset in ipairs(offsets) do
+for i, result in ipairs(results) do
+local newResult = {
+address = result.address + offset,
+flags = 16,
+value = d[1]
+}
+table.insert(modifiedResults, newResult)
+end
+end
+ 
+gg.setValues(modifiedResults)
+gg.toast("ON")
+clearReset()
+end
+end
+end
+
+function customchromeheadlight() -- custom headlight
+gg.setVisible(false)
+d = gg.prompt({
+ " CUSTOM CHROME HEADLIGHT : ",
+ " BACK ",
+},nil,{
+ "number",
+ "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "chromemenu"
+chromemenu()
+end
+
+gg.setVisible(false)
+gg.alert("GO TO HEADLIGHT AND SLIDE UP THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("1", 16)
+gg.getResults(9999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+local choice = gg.alert("PUT YOUR COLOR CODE THEN CLICK GG LOGO","GET COLOR CODE","OK")
+if choice == 1 then
+    local menu = gg.choice({
+    " RED: #FF0000 ", -- 1
+    " BLUE: #0000FF ", -- 2
+    " CYAN BLUE: #00FFFF ", -- 3
+    " GREEN: #00FF00 ", -- 4
+    " YELLOW: #FFFF00 ", -- 5
+    " ORANGE: #FF9900 ", -- 6
+    " PURPLE: #9900FF ", -- 7
+    " PINK: #FF00FF ", -- 8
+    " WHITE: #FFFFFF ", -- 9
+    }, nil, "CLICK ON COLOR CODE FOR COPIE")
+    if menu == 1 then
+    gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF0000") end
+    if menu == 2 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#0000FF") end
+    if menu == 3 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FFFF") end
+    if menu == 4 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FF00") end
+    if menu == 5 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFF00") end
+    if menu == 6 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF9900") end
+    if menu == 7 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#9900FF") end
+    if menu == 8 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF00FF") end
+    if menu == 9 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFFFF") end
+end
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.refineNumber("1", 16)
+gg.getResults(9999)
+gg.editAll(d[1], 16)
+gg.toast("ON")
+clearReset()
+end
+
+function customchromecaliper() -- chrome caliper
+gg.setVisible(false)
+d = gg.prompt({
+ " CUSTOM CHROME CALIPER : ",
+ " BACK ",
+},nil,{
+ "number",
+ "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "chromemenu"
+chromemenu()
+end
+
+gg.setVisible(false)
+gg.alert("GO TO CALIPER AND SLIDE UP THEN CLICK GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("1", 16)
+gg.getResults(9999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE DOWN THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("0", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+gg.alert("SLIDE UP THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.refineNumber("1", 16)
+gg.getResults(999999)
+gg.setVisible(false)
+local choice = gg.alert("PUT YOUR COLOR CODE THEN CLICK GG LOGO","GET COLOR CODE","OK")
+if choice == 1 then
+    local menu = gg.choice({
+    " RED: #FF0000 ", -- 1
+    " BLUE: #0000FF ", -- 2
+    " CYAN BLUE: #00FFFF ", -- 3
+    " GREEN: #00FF00 ", -- 4
+    " YELLOW: #FFFF00 ", -- 5
+    " ORANGE: #FF9900 ", -- 6
+    " PURPLE: #9900FF ", -- 7
+    " PINK: #FF00FF ", -- 8
+    " WHITE: #FFFFFF ", -- 9
+    }, nil, "CLICK ON COLOR CODE FOR COPIE")
+    if menu == 1 then
+    gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF0000") end
+    if menu == 2 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#0000FF") end
+    if menu == 3 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FFFF") end
+    if menu == 4 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#00FF00") end
+    if menu == 5 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFF00") end
+    if menu == 6 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF9900") end
+    if menu == 7 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#9900FF") end
+    if menu == 8 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FF00FF") end
+    if menu == 9 then gg.alert("THE CODE COLOR HAS BEEN COPIED TO THE CLIPBOARD PUT COLOR CODE THEN CLICK GG LOGO") gg.copyText("#FFFFFF") end
+end
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.refineNumber("1", 16)
+gg.getResults(9999)
+gg.editAll(d[1], 16)
+gg.toast("ON")
+clearReset()
+end
+
+
+function custommenu()
+ 
+  local menu = { 
+     " CUSTOM MASS ", 
+     " CUSTOM GEARBOX ", 
+     " ❌ B A C K ❌ ",
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇨 🇺 🇸 🇹 🇴 🇲     🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+
+   if choice[1] then custommass() end
+   if choice[2] then customgearbox() end
+   if choice[3] then backMenu() end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+function custommass() -- custom mass
+gg.setVisible(false)
+d = gg.prompt({
+     " INPUT MASS : ",
+     " EDIT MASS : ",
+     " BACK ",
+      },nil,{
+     "number",
+     "number",
+     "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[3] then
+lastMenu = "custommenu"
+custommenu()
+end
+
+clearReset()
+gg.setRanges(16384)
+gg.searchNumber(d[1], gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[2], gg.TYPE_FLOAT)
+gg.toast("ON")
+clearReset()
+end
+
+function customgearbox() -- custom gearbox
+gg.setVisible(false)
+d = gg.prompt({
+     " EDIT GEARBOX : ",
+     " BACK ",
+      },nil,{
+     "number",
+     "checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "custommenu"
+custommenu()
+end
+
+gg.setVisible(false)
+gg.alert("PUTS THE GEARBOX A [ 6 ] THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.setRanges(32)
+gg.searchNumber("6", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+revert = gg.getResults(1000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll(d[1], gg.TYPE_FLOAT)
+gg.toast("ON")
+clearReset()
+end
+
+
+
+function racemenu()
+  local menu = { 
+      " 3SEC "..sec3, 
+      " 5SEC "..sec5, 
+      " ❌ B A C K ❌  "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇷 🇦 🇨 🇪    🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+   if choice[1] then threesec() end
+   if choice[2] then fivesec() end
+   if choice[3] then backMenu() end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+function threesec() -- 3sec
+gg.setVisible(false)
+if sec3 == on then
+sec3 = off
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("-100000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("2500", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("3", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("1.1", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("925", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("3.6", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("4E-4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("10000000", gg.TYPE_FLOAT)
+gg.toast("OFF")
+clearReset()
+sec3 = off
+else
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("2500", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-100000", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("1.1", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("3", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("3.6", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("925", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("10000000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("4E-4", gg.TYPE_FLOAT)
+gg.toast("ON")
+clearReset()
+sec3 = on
+end
+end
+
+function fivesec() -- 5sec
+gg.setVisible(false)
+if sec5 == on then
+sec5 = off
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("-100000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("2500", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("30", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("3.6", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("4E-4", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("10000000", gg.TYPE_FLOAT)
+gg.toast("OFF")
+sec5 = off
+else
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("2500", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("-100000", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("3.6", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("30", gg.TYPE_FLOAT)
+gg.clearResults(100)
+gg.setRanges(16384)
+gg.searchNumber("10000000", gg.TYPE_FLOAT, false, gg.SIGN_EQUAL, 0, -1, 0)
+gg.setVisible(false)
+revert = gg.getResults(10000, nil, nil, nil, nil, nil, nil, nil, nil)
+gg.editAll("4E-4", gg.TYPE_FLOAT)
+gg.toast("ON")
+clearReset()
+sec5 = on
+end
+end
+
+
+
+function longname() -- long name
+gg.setVisible(false)
+clearReset()
+local results = searchModule("4539628425451457741", 32, "A", "LongName")
+if not results then return end
+local offsets = { -0x3C }
+local flags = { 4 }
+local valueInfo = {
+{ key2 = { min = 12, max = 100 }},
+}
+local getResults = getResults(results, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+local v_offsets = { 0x0 }
+local v_flags = { 4 }
+local v_values = { 99999 }
+if filterResults then
+v_setValues(filterResults, v_offsets, v_flags, v_values)
+end
+gg.alert("NOW YOU CAN PUT A LONG NAME")
+gg.toast("ON")
+clearReset()
+end
+
+function unlockmenu()
+  local menu = { 
+    " UNLOCK TOYOTA CROWN ", 
+    " UNLOCK WHEEL ", 
+    " UNLOCK W16 "..unlw16, 
+    " UNLOCK CLOTHES ", 
+    " UNLOCK ANIMATION ", 
+    " ❌ B A C K ❌ "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇺 🇳 🇱 🇴 🇨 🇰    🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+   if choice[1] then unlocktoyotacrown() end
+   if choice[2] then unlockwheel() end
+   if choice[3] then unlockengine() end
+   if choice[4] then unlockclothes() end
+   if choice[5] then unlockanimations() end
+   if choice[6] then backMenu() end
+ end
+
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+function unlocktoyotacrown() -- unlock toyota crown
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("256", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ ofs.address = ofs.address + 0x24
+ ofs.flags = 32
+ end
+gg.loadResults(results)
+gg.refineNumber("3", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ ofs.address = ofs.address + 0x8
+ ofs.flags = 4
+end
+gg.loadResults(results)
+gg.refineNumber("218", 4)
+results = gg.getResults(100000)
+gg.editAll("0", 4)
+gg.alert("BUY CAR 70")
+gg.toast("ON")
+clearReset()
+end
+
+function unlockwheel() -- wheel unlock 
+clearReset()
+for _, data in ipairs({
+  {"0x4C", 0},
+  {"0x38", 0}
+}) do
+  searchClass = L0_115
+  searchClass("OneWheelData", data[1], false, false, 32)
+  local results = gg.getResults(100000)
+  for i, result in ipairs(results) do
+    result.flags = 4
+    result.value = data[2]
+    result.freeze = true
+  end
+  gg.clearResults()
+  gg.addListItems(results)
+end
+gg.toast("ON")
+clearReset()
+end
+
+
+function unlockengine() -- unlock w16 
+gg.setVisible(false)
+if unlw16 == on then
+unlw16 = off
+ofst = 0x3301334 setvalue(libil2cpp + ofst, 16, -8.40993806e-14) 
+ofst = 0x3301338 setvalue(libil2cpp + ofst, 16, -2.8720048e-14)
+gg.toast("OFF")
+unlw16 = off
+else
+ofst = 0x3301334 setvalue(libil2cpp + ofst, 16, -2.74877907e11) 
+ofst = 0x3301338 setvalue(libil2cpp + ofst, 16, -6.13017998e13)
+gg.alert("NOW YOU CAN BUY W16")
+gg.toast("ON")
+unlw16 = on
+end
+end
+
+
+
+function unlockclothes() -- unlock clothes
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("257", 4)
+local results = gg.getResults(33000)
+if #results == 0 then
+  return
+end
+local allowedValues = {50, 100, 150, 200, 300, 400, 500, 600, 700, 800, 1000}
+local allowed = {}
+for _, v in ipairs(allowedValues) do
+  allowed[v] = true
+end
+local list1 = {}
+for i, r in ipairs(results) do
+  table.insert(list1, {address = r.address - 0x10, flags = 4})
+end
+local values1 = gg.getValues(list1)
+local edits1 = {}
+for i, v in ipairs(values1) do
+  if allowed[v.value] then
+    table.insert(edits1, {address = v.address, flags = 4, value = 1})
+  end
+end
+local offsets = {-0x10, -0x14}
+local list2 = {}
+for i, r in ipairs(results) do
+  for _, off in ipairs(offsets) do
+    table.insert(list2, {address = r.address + off, flags = 4})
+  end
+end
+local values2 = gg.getValues(list2)
+local edits2 = {}
+for i, v in ipairs(values2) do
+  if v.value == 1 then
+    table.insert(edits2, {address = v.address, flags = 4, value = 0})
+  end
+end
+if #edits1 > 0 then gg.setValues(edits1) end
+if #edits2 > 0 then gg.setValues(edits2) end
+gg.toast("ON")
+clearReset()
+end
+
+function unlockanimations() -- unlock animtion
+clearReset()
+searchClass = L0_115
+searchClass("AnimData", "0x20", false, false, 32)
+local results = gg.getResults(150)
+for i, result in ipairs(results) do
+result.flags = 32
+result.value = 0
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+gg.toast("ON")
+clearReset()
+end
+
+
+
+function premiumkits()
+  local menu = { 
+      "UNLOCK PREMIUM KITS",
+      " ❌ B A C K ❌  "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇵 🇷 🇪 🇲 🇮 🇺 🇲   🇰 🇮 🇹 🇸  ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+
+   if choice[1] then premiumbk() end
+   if choice[2] then backMenu() end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+
+function premiumbk() -- unlock premium kit
+local items = {
+  "SPOILER", "BUMPER", "ROOF", "HOOD", " SIDE SKIRT", "FENDER"
+}
+local menu = gg.choice({
+  " UNLOCK PREMIUM SPOILER ",
+  " UNLOCK PREMIUM BUMPER ",
+  " UNLOCK PREMIUM ROOF ",
+  " UNLOCK PREMIUM HOOD ",
+  " UNLOCK PREMIUM SIDE SKRIT ",
+  " UNLOCK PREMIUM FENDER ",
+})
+function unlockPremium(kit)
+  gg.setVisible(false)
+  gg.alert("CLICK ON " .. kit .. " PREMIUM THEN CLICK ON THE GG LOGO TO START")
+  while not gg.isVisible() do gg.sleep(50) end
+  gg.setVisible(false)
+  clearReset()
+  gg.setRanges(32)
+  gg.searchNumber("7", 32)
+  results = gg.getResults(100000)
+  for i, ofs in ipairs(results) do
+    ofs.address = ofs.address - 0xF0
+    ofs.flags = 32
+  end
+  gg.loadResults(results)
+  gg.refineNumber("2", 32)
+  results = gg.getResults(100000)
+  for i, ofs in ipairs(results) do
+    ofs.address = ofs.address + 0x70
+    ofs.flags = 32
+  end
+  gg.loadResults(results)
+  gg.refineNumber("4294967295", 32)
+  results = gg.getResults(100000)
+  for i, ofs in ipairs(results) do
+    ofs.address = ofs.address - 0x38
+    ofs.flags = 4
+  end
+  gg.loadResults(results)
+  gg.getResults(9999)
+  local v = gg.getResults(1)
+  for _, item in ipairs(v) do
+    item.freeze = true
+  end
+  gg.addListItems(v)
+  gg.clearResults()
+  gg.alert("BUY OTHER " .. kit .. " THEN CLICK ON OTHER CAR AND COME BACK")
+  gg.toast("ON")
+end
+if menu and menu >= 1 and menu <= 6 then
+  unlockPremium(items[menu])
+end
+end
+
+
+
+
+function achivementmenu()
+  local menu = {
+" BLOCK POST ", 
+" SPEED BANNER ", 
+" DRAG WINS ", 
+" POLICE ", 
+" TIRE BURNT ", 
+" FUEL CONSUMED ", 
+" CAR WASH ", 
+" CAR REPAIR", 
+" EMOTIONS ", 
+" MARATHON ", 
+" WINGMAN ", 
+" GAME TIME ", 
+" DRIFT MASTER ", 
+" DRIFT KING ", 
+" OFFROAD ", 
+" ROAD KING ", 
+" LEVEL ", 
+" ❌ B A C K ❌ ",
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇦 🇨 🇭 🇮 🇻 🇪 🇲 🇪 🇳 🇹     🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+
+  if choice[1] then one() end
+  if choice[2] then two() end
+  if choice[3] then three() end
+  if choice[4] then four() end
+  if choice[5] then five() end
+  if choice[6] then six() end
+  if choice[7] then seven() end
+  if choice[8] then eight() end
+  if choice[9] then nine() end
+  if choice[10] then ten() end
+  if choice[11] then eleven() end
+  if choice[12] then twelve() end
+  if choice[13] then thirteen() end
+  if choice[14] then fourteen() end
+  if choice[15] then fifteen() end
+  if choice[16] then sixteen() end
+  if choice[17] then seventeen() end
+  if choice[18] then backMenu() end
+end
+
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+
+
+function one() -- block post
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0x7C", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function two() -- speed banner
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0x8C", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function three() -- drag wins
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0x9C", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function four() -- police
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xAC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function five() -- tire burnt
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xBC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function six() -- fuel consumed
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xCC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function seven() -- car wash
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xDC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function eight() -- car repair
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xEC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function nine() -- emotions
+clearReset()
+searchClass = L0_115
+searchClass("FreeDriveDb", "0xFC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function ten() -- marathon
+clearReset()
+searchClass = L0_115
+searchClass("LatestMoving", "0xC4", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function eleven() -- wingman
+clearReset()
+searchClass = L0_115
+searchClass("LatestMoving", "0xD8", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function twelve() -- game time
+clearReset()
+searchClass = L0_115
+searchClass("AnalyticService", "0x20", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function thirteen() -- drift master
+clearReset()
+searchClass = L0_115
+searchClass("Powertrain", "0x1E0", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function fourteen() -- drift king
+clearReset()
+searchClass = L0_115
+searchClass("Powertrain", "0x1B8", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function fifteen() -- offroad
+clearReset()
+searchClass = L0_115
+searchClass("Powertrain", "0x1CC", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function sixteen() -- road king
+clearReset()
+searchClass = L0_115
+searchClass("Powertrain", "0x1A4", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 9999999
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+clearReset()
+gg.toast("ON")
+end
+
+function seventeen() -- level
+gg.setVisible(false)
+gg.alert("GO TO LEVEL THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(16384)
+gg.searchNumber("0.1", 16)
+results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 16
+result.value = 1E-40
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+gg.alert("START A LEVEL AND IT WILL AUTOMATICALLY COMPLETE IT")
+clearReset()
+end
+
+
+function spoilermenu()
+
+  local menu = { 
+" SPOILER 1 ", 
+" SPOILER 2 ", 
+" SPOILER 3 ", 
+" SPOILER 4 ", 
+" SPOILER 5 ", 
+" SPOILER 6 ", 
+" SPOILER 7 ", 
+" SPOILER 8 ", 
+" SPOILER 9 ", 
+" SPOILER 10 ", 
+" SPOILER 11 ", 
+" SPOILER 12 ", 
+" SPOILER 13 ", 
+" SPOILER 14 ", 
+" SPOILER 15 ", 
+" SPOILER 16 ", 
+" SPOILER 17 ", 
+" SPOILER 18 ", 
+" SPOILER 19 ", 
+" SPOILER 20 ", 
+" SPOILER 21 ", 
+" SPOILER 22 ", 
+" SPOILER 23 ", 
+" SPOILER 24 ", 
+" SPOILER 25 ", 
+" SPOILER 26 ", 
+" SPOILER 27 ", 
+" SPOILER 28 ", 
+" SPOILER 29 ", 
+" SPOILER 30 ", 
+" SPOILER 31 ", 
+" SPOILER 32 ", 
+" SPOILER 33 ", 
+" SPOILER 34 ", 
+" SPOILER 35 ", 
+" CUSTOM SPOILER ", 
+" GET SPOILER CODE ",
+" GET PREMIUM SPOILER ", 
+" ❌ B A C K ❌ "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇸 🇵 🇴 🇮 🇱 🇪 🇷    🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+if choice[1] then s1() end
+   if choice[2] then s2() end
+   if choice[3] then s3() end
+   if choice[4] then s4() end
+   if choice[5] then s5() end
+   if choice[6] then s6() end
+   if choice[7] then s7() end
+   if choice[8] then s8() end
+   if choice[9] then s9() end
+   if choice[10] then s10() end
+   if choice[11] then s11() end
+   if choice[12] then s12() end
+   if choice[13] then s13() end
+   if choice[14] then s14() end
+   if choice[15] then s15() end
+   if choice[16] then s16() end
+   if choice[17] then s17() end
+   if choice[18] then s18() end
+   if choice[19] then s19() end
+   if choice[20] then s20() end
+   if choice[21] then s21() end
+    if choice[22] then s22() end
+   if choice[23] then s23() end
+   if choice[24] then s24() end
+   if choice[25] then s25() end
+   if choice[26] then s26() end
+   if choice[27] then s27() end
+   if choice[28] then s28() end
+   if choice[29] then s29() end
+   if choice[30] then s30() end
+   if choice[31] then s31() end
+   if choice[32] then s32() end
+   if choice[33] then s33() end
+   if choice[34] then s34() end
+   if choice[35] then s35() end
+   if choice[36] then s36() end
+   if choice[37] then s37() end
+   if choice[38] then s38() end
+   if choice[39] then backmenu() end
+end
+
+function backmenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+function s1() -- spoiler 1
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 95 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s2()  -- spoiler 2
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 172 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s3()  -- spoiler 3
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 160 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s4()  -- spoiler 4
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 120 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s5()  -- spoiler 5
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 110 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s6() -- spoiler 6
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 111 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s7()  -- spoiler 7
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 109 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s8()  -- spoiler 8
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 113 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s9()  -- spoiler 9
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 114 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s10() -- spoiler 10
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 115 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s11()  -- spoiler 11
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 117 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s12()  -- spoiler 12
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 119 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s13()  -- spoiler 13
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 106 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s14() -- spoiler 14
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 105 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s15() -- spoiler 15
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 101 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s16()  -- spoiler 16
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 171 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s17() -- spoiler 17
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 168 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s18()  -- spoiler 18
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 162 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s19() -- spoiler 19
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 161 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s20() -- spoiler 20
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 159 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s21() -- spoiler 21
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 158 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s22() -- spoiler 22
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 157 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s23() -- spoiler 23
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 156 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s24() -- spoiler 24
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 155 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s25()  -- spoiler 25
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 153 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s26()  -- spoiler 26
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 151 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s27() -- spoiler 27
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 148 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s28() -- spoiler 28
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 147 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s29() -- spoiler 29
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 146 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s30() -- spoiler 30
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 127 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s31() -- spoiler 31
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 198 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s32() -- spoiler 32
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 187 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s33()  -- spoiler 33
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 188 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s34()  -- spoiler 34
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 65 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s35()  -- spoiler 35
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { 69 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s36()  -- custom spoiler
+d = gg.prompt({
+" EDIT SPOILER : ", -- 1
+" BACK ", -- 2
+},nil,{
+"number",
+"checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "HOME"
+HOME()
+end
+
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "SpoilerCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+{ key2 = { min = -2, max = 249 }},
+{ key3 = { 34359738368, 68719476736 }},
+{ key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0 }, { 4 }, { d[1] }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function s37()  -- get spoiler code
+gg.setVisible(false)
+gg.alert("CLICK ON SPOILER THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("7", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0xF0
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("2", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address + 0x70
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("4294967295", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0x38
+ofs.flags = 4
+end
+gg.loadResults(results)
+gg.getResults(9999)
+gg.alert("CLICK ON SPOILER TO GET CODE")
+gg.setVisible(false)
+local v = gg.getResults(1)
+gg.setVisible(false)
+while not gg.isVisible() do
+local old = v[1].value
+v = gg.getValues(v)
+if old ~= v[1].value then 
+gg.toast('Code:' .. v[1].value)
+end
+gg.sleep(100)
+end
+end
+
+function s38() -- get premium spoiler
+gg.setVisible(false)
+gg.alert("CLICK ON SPOILER PREMIUM THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("7", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0xF0
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("2", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address + 0x70
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("4294967295", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0x38
+ofs.flags = 4
+end
+gg.loadResults(results)
+gg.getResults(9999)
+gg.setVisible(false)
+local v = gg.getResults(1)
+for _, item in ipairs(v) do
+    item.freeze = true
+end
+gg.addListItems(v)
+local value = v[1] and v[1].value or nil
+gg.clearResults()
+gg.setVisible(false)
+gg.alert("BUY OTHER SPOILER THEN CLICK ON THE GG LOGO TO START")
+while true do
+    if gg.isVisible() then
+        break
+    else
+        gg.sleep(50)
+    end
+end
+gg.setVisible(false)
+local results = searchModule("1657333858397323264", 32, "A", "Spoiler")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x20, 0x14, 0x3C }
+local flags = { 4, 32, 4 }
+local valueInfo = {
+    { key2 = { min = -2, max = 249 }},
+    { key1 = { 34359738368 }},
+    { key1 = { -2 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+    for i, result in ipairs(filterResults) do
+        if value then
+            v_setValues(filterResults, { 0 }, { 4 }, { value }, true)
+        else
+            print("Error : value nil")
+        end
+    end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+
+
+function bumpermenu()
+  local menu = { 
+      " REMOVE BUMPER FRONT ", 
+      " REMOVE BUMPER REAR ", 
+      " GET PREMIUM BUMPER ", 
+      " ❌ B A C K ❌ "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇧 🇺 🇲 🇵 🇪 🇷     🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+
+   if choice[1] then removefrontbumper() end
+   if choice[2] then removebackbumper() end
+   if choice[3] then premiumbumper() end
+   if choice[4] then backMenu() end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+function removefrontbumper() -- remove front bumper
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "RemoveF")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24 }
+local flags = { 32, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x10 }, { 4 }, { -1 }, true)
+end
+end
+clearReset()
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+end
+
+function removebackbumper() -- remove rear bumper
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "RemoveR")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x28 }
+local flags = { 32, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x14 }, { 4 }, { -1 }, true)
+end
+end
+clearReset()
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+end
+
+function premiumbumper() -- get premium bumper
+gg.setVisible(false)
+gg.alert("CLICK ON BUMPER PREMIUM THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("7", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0xF0
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("2", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address + 0x70
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("4294967295", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0x38
+ofs.flags = 4
+end
+gg.loadResults(results)
+gg.getResults(9999)
+gg.setVisible(false)
+local v = gg.getResults(1)
+for _, item in ipairs(v) do
+    item.freeze = true
+end
+gg.addListItems(v)
+local value = v[1] and v[1].value or nil
+gg.clearResults()
+gg.setVisible(false)
+gg.alert("BUY OTHER BUMPER THEN CLICK ON THE GG LOGO TO START")
+while true do
+    if gg.isVisible() then
+        break
+    else
+        gg.sleep(50)
+    end
+end
+gg.setVisible(false)
+local results = searchModule("1657333858397323264", 32, "A", "Bumper")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x28 }
+local flags = { 32, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+    for i, result in ipairs(filterResults) do
+        if value then
+            v_setValues(filterResults, { 0 }, { 4 }, { value }, true)
+        else
+            print("Error : value nil")
+        end
+    end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+
+
+function roofmenu()
+  local menu = { 
+" ROOF 1 ", 
+" ROOF 2 ", 
+" ROOF 3 ", 
+" ROOF 4 ", 
+" ROOF 5 ", 
+" ROOF 6 ", 
+" ROOF 7 ", 
+" ROOF 8 ", 
+" ROOF 9 ", 
+" ROOF 10 ", 
+" ROOF 11 ", 
+" ROOF 12 ", 
+" ROOF 13 ", 
+" ROOF 14 ", 
+" ROOF 15 ", 
+" CUSTOM ROOF ", 
+" GET ROOF CODE ", 
+" GET PREMIUM ROOF ", 
+" ❌ B A C K ❌ "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇷 🇴 🇴 🇫      🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+  
+    
+   if choice[1] then r1() end
+   if choice[2] then r2() end
+   if choice[3] then r3() end
+   if choice[4] then r4() end
+   if choice[5] then r5() end
+   if choice[6] then r6() end
+   if choice[7] then r7() end
+   if choice[8] then r8() end
+   if choice[9] then r9() end
+   if choice[10] then r10() end
+   if choice[11] then r11() end
+   if choice[12] then r12() end
+   if choice[13] then r13() end
+   if choice[14] then r14() end
+   if choice[15] then r15() end
+   if choice[16] then r16() end
+   if choice[17] then r17() end
+   if choice[18] then r18() end
+   if choice[19] then backmenu() end
+end
+
+function backmenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+  
+function r1() -- roof 1
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 4 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r2()  -- roof 2
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 5 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r3()  -- roof 3
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 6 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r4()  -- roof 4
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 13 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r5()  -- roof 5
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 14 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r6()  -- roof 6
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 15 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r7()  -- roof 7
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 16 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r8() -- roof 8
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 17 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r9()  -- roof 9
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 20 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r10() -- roof 10
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 21 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r11() -- roof 11
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 35 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r12()  -- roof 12
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 39 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r13()  -- roof 13
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 32 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r14()  -- roof 14
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 69 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r15()  -- roof 15
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { 75 }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+function r16() -- custom roof
+d = gg.prompt({
+" EDIT ROOF : ", -- 1
+" BACK ", -- 2
+},nil,{
+"number",
+"checkbox",
+})
+
+if d == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+if d[2] then
+lastMenu = "HOME"
+HOME()
+end
+
+gg.setVisible(false)
+gg.alert("CLICK ON EXTERIOR THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+local results = searchModule("1657333858397323264", 32, "A", "RoofCustom")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+for i, result in ipairs(filterResults) do
+v_setValues(filterResults, { 0x24, 0x20 }, { 4 }, { d[1] }, true)
+end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+function r17()  -- get roof code
+gg.setVisible(false)
+gg.alert("CLICK ON ROOF THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("7", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0xF0
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("2", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address + 0x70
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("4294967295", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0x38
+ofs.flags = 4
+end
+gg.loadResults(results)
+gg.getResults(9999)
+gg.alert("CLICK ON ROOF TO GET CODE")
+gg.setVisible(false)
+local v = gg.getResults(1)
+gg.setVisible(false)
+while not gg.isVisible() do
+local old = v[1].value
+v = gg.getValues(v)
+if old ~= v[1].value then 
+gg.toast('Code:' .. v[1].value)
+end
+gg.sleep(100)
+end
+end
+
+function r18()  -- get premium roof
+gg.setVisible(false)
+gg.alert("CLICK ON ROOF PREMIUM THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("7", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0xF0
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("2", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address + 0x70
+ofs.flags = 32
+end
+gg.loadResults(results)
+gg.refineNumber("4294967295", 32)
+results = gg.getResults(100000)
+for i, ofs in ipairs(results) do
+ofs.address = ofs.address - 0x38
+ofs.flags = 4
+end
+gg.loadResults(results)
+gg.getResults(9999)
+gg.setVisible(false)
+local v = gg.getResults(1)
+for _, item in ipairs(v) do
+    item.freeze = true
+end
+gg.addListItems(v)
+local value = v[1] and v[1].value or nil
+gg.clearResults()
+gg.setVisible(false)
+gg.alert("BUY OTHER ROOF THEN CLICK ON THE GG LOGO TO START")
+while true do
+    if gg.isVisible() then
+        break
+    else
+        gg.sleep(50)
+    end
+end
+gg.setVisible(false)
+local results = searchModule("1657333858397323264", 32, "A", "Roof")
+if not results then return end local pointerResults = pointerSearch(results, -0x550, 32)
+if not pointerResults then return end
+local offsets = { 0x14, 0x24, 0x20 }
+local flags = { 32, 4, 4 }
+local valueInfo = {
+{ key1 = { 34359738368 }},
+{ key2 = { min = -2, max = 9 }},
+}
+local getResults = getResults(pointerResults, offsets, flags)
+local filterResults = filterResults(getResults, valueInfo)
+if filterResults then
+    for i, result in ipairs(filterResults) do
+        if value then
+            v_setValues(filterResults, { 0 }, { 4 }, { value }, true)
+        else
+            print("Error : value nil")
+        end
+    end
+end
+gg.alert("CLICK A OHTER CAR AND COME BACK")
+gg.toast("ON")
+clearReset()
+end
+
+
+function premiumcar()
+
+  local menu = { 
+     " 350z ", 
+     " 240sx ", 
+     " Toyota carmy ", 
+     " Skyline r32 ", 
+     " BMW M2 ", 
+      " BMW X6 ", 
+      " BMW M4 g82 ", 
+      " BMW M5 f90 ", 
+      " Mercedes E63 ", 
+      " Dodge viper ", 
+      " Mercedes S65 ", 
+       " Mercedes GT63 ", 
+       " BMW M8 ", 
+       " f1 ", 
+       " BMW i8 ", 
+       " Buggy ", 
+       " f2 ", 
+       " MOTORHOME ", 
+       " LA FERRARI ", 
+       " JEEP GLADIATOR ", 
+       " ❌ B A C K ❌ "
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇵 🇷 🇪 🇲 🇮 🇺 🇲   🇨 🇦 🇷  ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+  
+   if choice[1] then onee() end
+   if choice[2] then twoo() end
+   if choice[3] then threee() end
+   if choice[4] then fourr() end
+   if choice[5] then fivee() end
+   if choice[6] then sixx() end
+   if choice[7] then sevenn() end
+   if choice[8] then eightt() end
+   if choice[9] then ninee() end
+   if choice[10] then tenn() end
+   if choice[11] then elevenn() end
+   if choice[12] then twelvee() end
+   if choice[13] then thirteenn() end
+   if choice[14] then fourteenn() end
+   if choice[15] then fifteenn() end
+   if choice[16] then sixteenn() end
+   if choice[17] then seventeen() end
+   if choice[18] then eightteenn() end
+   if choice[19] then nineteenn() end
+   if choice[20] then twentyy() end
+   if choice[21] then backmenu() end
+end
+
+function backmenu() 
+lastMenu = "HOME"
+HOME()
+end
+    
+    
+    
+    
+  
+function onee() -- 350z
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 145,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function twoo()  -- 240sx
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 131,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function threee() -- toyota carmy
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 120,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function fourr() -- skyline r32
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 156,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function fivee() -- bmw m2
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 127,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+
+function sixx() -- bmw x6
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 118,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function sevenn()  -- bmw m4 g82
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 153,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function eightt() -- bmw m5 f90
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 104,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function ninee() -- mercedes e63
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 114,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function tenn() -- dodge viper
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 141,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function elevenn() -- mercedes s65
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 136,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function twelvee() -- mercedes gt63
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 142,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function thirteenn() -- bmw m8
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 144,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function fourteenn() -- f1
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 155,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function fifteenn() -- bmw i8
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 138,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function sixteenn() -- buggy
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 164,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function seventeenn() -- f2
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 165,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function eightteenn() -- motorhome
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 236,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function nineteenn() -- la ferrari
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 241,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+function twentyy() -- jeep gladiator
+gg.setVisible(false)
+clearReset()
+gg.setRanges(32)
+local results = searchModule("21474836695", 32, "A", "CarUnlock")
+if not results then return end
+local FinalResults = {}
+for i, result in ipairs(results) do
+FinalResults[#FinalResults + 1] = {
+address = result.address - 0x18C,
+flags = 4,
+value = 243,
+freeze = true
+}
+end
+gg.addListItems(FinalResults) 
+gg.removeListItems(FinalResults)
+gg.setVisible(false)
+gg.alert("GO FIRST CAR THEN CLICK ON THE GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+gg.alert("CLICK MANY TIME ON BUY")
+gg.sleep(7000)
+ofst = 0x2FCA918 setvalue(libil2cpp + ofst, 16, 8.91018392e-28) 
+ofst = 0x2FCA91C setvalue(libil2cpp + ofst, 16, 6.34119311e30)
+ofst = 0x2FCA920 setvalue(libil2cpp + ofst, 16, -6.13017998e13) 
+gg.toast("ON")
+clearReset()
+end
+
+
+function unlocksiren() -- unlock siren
+gg.setVisible(false)
+if sirenunlock == on then
+sirenunlock = off
+ofst = 0x3220D2C setvalue(libil2cpp + ofst, 16, -8.4529592e-14) 
+ofst = 0x3220D30 setvalue(libil2cpp + ofst, 16, -2.87131023e-14)
+gg.toast("OFF")
+sirenunlock = off
+else
+ofst = 0x3220D2C setvalue(libil2cpp + ofst, 16, 6.46245485e-27) 
+ofst = 0x3220D30 setvalue(libil2cpp + ofst, 16, -6.13017998e13)
+gg.alert("NOW YOU CAN BUY SIREN")
+gg.toast("ON")
+end
+end
+
+function fastrun() --fast run
+if characterfast == on then
+characterfast = off
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("25", 64)
+gg.getResults(1000)
+gg.refineNumber("25", 64)
+gg.getResults(1000)
+gg.refineNumber("25", 64)
+gg.getResults(1000)
+gg.editAll("1", 64)
+gg.toast("OFF")
+clearReset()
+characterfast = off
+else
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("1", 64)
+gg.getResults(1000)
+gg.refineNumber("1", 64)
+gg.getResults(1000)
+gg.refineNumber("1", 64)
+gg.getResults(1000)
+gg.editAll("25", 64)
+gg.toast("ON")
+clearReset()
+characterfast = on
+end
+end
+
+function bypassmenu()
+
+  local menu = { 
+" NO DAMAGE ENGINE "..nodamageEngine, 
+" NO DAMAGE BODY ",
+" REPAIR CAR BODY ", 
+" BUY CAR 0$ (ROOM) ", 
+" TIRE 0% ", 
+" UNLIMITED FUEL ", 
+" WALL HACK "..crosswall, 
+" FIND ROOM PASSWORD", 
+" ❌ B A C K ❌ ",
+  }
+  
+  local choice = gg.multiChoice(menu, nil, "🇧 🇾 🇵 🇦 🇸 🇸     🇲 🇪 🇳 🇺 ")
+  
+  if not choice then
+    gg.toast("Menu closed")
+    return
+  end
+
+  if choice[1] then nodamagengine() end
+  if choice[2] then nodaamagebody() end
+  if choice[3] then repaircarbody() end
+  if choice[4] then buycar() end
+  if choice[5] then tireburnt() end
+  if choice[6] then unlimitedfuel() end
+  if choice[7] then wallhack() end
+  if choice[8] then findroompw() end
+  if choice[9] then backMenu() end
+end
+
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+ 
+
+function nodamagengine() -- no damage engine
+gg.setVisible(false)
+if nodamageEngine == on then
+nodamageEngine = off
+ofst = 0x374AE0C setvalue(libil2cpp + ofst, 16, -3.50350172e10) 
+ofst = 0x374AE10 setvalue(libil2cpp + ofst, 16, -1.06376928e37)
+gg.toast("OFF")
+nodamageEngine = off
+else
+gg.setVisible(false)
+ofst = 0x374AE0C setvalue(libil2cpp + ofst, 16, -2.74877907e11) 
+ofst = 0x374AE10 setvalue(libil2cpp + ofst, 16, -6.13017998e13)
+gg.toast("ON")
+nodamageEngine = on
+end
+end
+
+function nodaamagebody() -- no damage body
+gg.setVisible(false)
+if nodamagebody == on then
+nodamagebody = off
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("95479337583", 32, false, gg.SIGN_EQUAL, 0, -1, 0)
+local res = gg.getResults(10)
+local edits = {}
+for i, r in ipairs(res) do
+  local addr = r.address - 0x30
+  table.insert(edits, {address = addr, value = "256", flags = 4})
+gg.setValues(edits)
+gg.toast("OFF")
+clearReset()
+end
+nodamagebody = off
+else
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("95479337583", 32, false, gg.SIGN_EQUAL, 0, -1, 0)
+local res = gg.getResults(10)
+local edits = {}
+for i, r in ipairs(res) do
+  local addr = r.address - 0x30
+  table.insert(edits, {address = addr, value = "1", flags = 4})
+gg.setValues(edits)
+gg.toast("ON")
+clearReset()
+nodamagebody = on
+end
+end
+end
+
+function repaircarbody() -- repair car body
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("95479337583", 32, false, gg.SIGN_EQUAL, 0, -1, 0)
+local res = gg.getResults(10)
+local edits = {}
+for i, r in ipairs(res) do
+  local addr = r.address - 0x30
+  table.insert(edits, {address = addr, value = "257", flags = 4})
+gg.setValues(edits)
+gg.toast("ON")
+clearReset()
+end
+end
+
+function buycar() -- buy car 0$ (room)
+clearReset()
+searchClass = L0_115
+searchClass("SellCarTrigger", "0x60", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 32
+result.value = 0
+result.freeze = true
+end
+gg.clearResults()
+gg.addListItems(results)
+gg.toast("ON")
+clearReset()
+end
+
+function tireburnt() -- tire 0%
+gg.setVisible(false)
+gg.alert("GO IN ROOM THEN CLICK LOGO GG")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+clearReset()
+gg.setVisible(false)
+gg.clearResults()
+gg.clearList()
+gg.setRanges(gg.REGION_ANONYMOUS)
+gg.searchNumber("2500", gg.TYPE_QWORD, false, gg.SIGN_EQUAL, 0, -1, 0)
+local results = gg.getResults(200)
+originalValues = {}
+
+for i, result in ipairs(results) do
+  table.insert(originalValues, {address = result.address, value = result.value, offsetAddress = result.address + 0x1C, offsetValue = gg.getValues({{address = result.address + 0x1C, flags = gg.TYPE_QWORD}})[1].value})
+end
+
+if #originalValues > 0 then
+  local valuesToChange = {}
+  for i, v in ipairs(originalValues) do
+    table.insert(valuesToChange, {address = v.offsetAddress, value = "0", flags = gg.TYPE_FLOAT}) 
+  end
+  gg.setValues(valuesToChange)
+gg.clearResults()
+gg.setVisible(false)
+gg.toast("ON")
+end
+clearReset()
+end
+
+function unlimitedfuel() -- unlimited fuel
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("4556721927168720896", 32)
+local results = gg.getResults(100000)
+for i, v in ipairs(results) do
+    v.flags = 16
+    v.address = v.address + -0x4
+    v.value = 100
+end
+gg.setValues(results)
+gg.toast("ON")
+clearReset()
+end
+
+
+
+function wallhack() -- cross walls
+gg.setVisible(false)
+if crosswall == on then
+crosswall = off
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("2.4611913E-38", 16)
+local r = gg.getResults(1000)
+for i = 1, #r do r[i].address = r[i].address + 0x30 end
+gg.loadResults(r)
+gg.refineNumber("999.9", 16)
+r = gg.getResults(1000)
+for i = 1, #r do r[i] = {address=r[i].address, flags=16, value=-10, freeze=true} end
+gg.clearResults()
+gg.addListItems(r)
+gg.toast("OFF")
+clearReset()
+crosswall = off
+else
+clearReset()
+gg.setRanges(32)
+gg.searchNumber("2.4611913E-38", 16)
+local r = gg.getResults(1000)
+for i = 1, #r do r[i].address = r[i].address + 0x30 end
+gg.loadResults(r)
+gg.refineNumber("-10", 16)
+r = gg.getResults(1000)
+for i = 1, #r do r[i] = {address=r[i].address, flags=16, value=999.9, freeze=true} end
+gg.clearResults()
+gg.addListItems(r)
+gg.toast("ON")
+clearReset()
+crosswall = on
+end
+end
+
+
+
+
+function findroompw() -- find room password
+clearReset()
+searchClass = L0_115
+searchClass("RoomDataItem", "0x9C", false, false, 32)
+local results = gg.getResults(999999)
+for i, result in ipairs(results) do
+result.flags = 4
+end
+gg.loadResults(results)
+local results = gg.getResults(gg.getResultsCount())
+  local valueList = {}
+  for _, v in ipairs(results) do
+    table.insert(valueList, tostring(v.value))
+  end
+
+  local choice = gg.choice(valueList, nil, "CLICK ON ROOM PASSWORD FOR COPY")
+  if choice then
+    local selectedValue = valueList[choice]
+    gg.copyText(selectedValue)
+    gg.toast("Copied: " .. selectedValue)
+    gg.clearResults()
+  end
+end
+
+while true do
+if gg.isVisible(true) then
+gg.setVisible(false)
+if lastMenu == "moneymenu" then
+MENU = 1
+moneymenu()
+elseif lastMenu == "coinmenu" then
+MENU = 2
+coinmenu()
+elseif lastMenu == "hpmenu" then
+MENU = 3
+hpmenu()
+elseif menu == 4 then
+lastMenu = "shifttimemenu"
+shifttimemenu()
+elseif lastMenu == "copycar" then
+MENU = 5
+copycar()
+elseif lastMenu == "ufomenu" then
+MENU = 6
+ufomenu()
+elseif lastMenu == "steeringanglemenu" then
+MENU = 7
+steeringanglemenu()
+elseif lastMenu == "chromemenu" then
+MENU = 8
+chromemenu()
+elseif lastMenu == "custommenu" then
+MENU = 9
+custommenu()
+elseif lastMenu == "racemenu" then
+MENU = 10
+racemenu()
+elseif lastMenu == "unlockmenu" then
+MENU = 11
+unlockmenu()
+elseif lastMenu == "achivementmenu" then
+MENU = 12
+achivementmenu()
+elseif lastMenu == "spoilermenu" then
+MENU = 13
+spoilermenu()
+elseif lastMenu == "bumpermenu" then
+MENU = 14
+bumpermenu()
+elseif lastMenu == "roofmenu" then
+MENU = 15
+roofmenu()
+elseif lastMenu == "premiumcar" then
+MENU = 16
+premiumcar()
+elseif lastMenu == "bypassmenu" then
+MENU = 17
+bypassmenu()
+else
+MENU = 1
+HOME()
+end
+end
+end
