@@ -617,7 +617,7 @@ nodamageEngine = off
 crosswall = off
 
 clearReset()
-gg.toast("CLICK GG LOGO")
+gg.toast("SCRIPT LOADED:CLICK ON GG")
 function HOME()
 lastMenu = "HOME"
 local menu = gg.choice({
