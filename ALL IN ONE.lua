@@ -642,7 +642,7 @@ local menu = gg.choice({
 " • UNLOCK SIREN", -- 19
 " • FAST CHARACTER", -- 20
 " • BYPASS MENU", -- 21
-"Information", -- 22			
+"𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉", -- 22			
 " ❌ E X I T ❌ ",
 },nil,os.date([[
 ┏━━━━━━━━⋆✪⋆━━━━━━━━┓
@@ -731,6 +731,7 @@ function Info()
 	"• 𝙁𝙊𝙍 𝘼𝙉𝙔 𝙁𝙍𝙀𝙀 𝘼𝙉𝘿 𝙋𝘼𝙄𝘿 𝙎𝙀𝙍𝙑𝙄𝘾𝙀 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋: ",
 	"𝙊𝙍 𝘿𝙄𝙎𝘾𝙊𝙍𝘿",
     "• 𝘼𝙇𝙃𝘼𝙈𝘿𝙐𝙇𝙄𝙇𝙇𝘼𝙃 𝙒𝙊𝙍𝙇𝘿 𝙏𝙊𝙋 𝙏𝙍𝙐𝙎𝙏𝙀𝘿 𝙎𝙀𝙇𝙇𝙀𝙍",
+	"✖️BACK✖️",
   }, nil, "🇵🇸 𝙋𝘼𝙇𝙀𝙎𝙏𝙄𝙉𝙄 🇵🇸")
   
   
@@ -740,9 +741,16 @@ function Info()
   elseif menu == 2 then InfoWa()
   elseif menu == 3 then InfoDc()
   elseif menu == 4 then Info()
+  elseif menu == 5 then backmenu()
   end
 end
 
+  
+
+function backmenu() 
+lastMenu = "HOME"
+HOME()
+end
 
 if input == nil then
 gg.setVisible(false)
