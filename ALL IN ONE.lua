@@ -642,6 +642,7 @@ local menu = gg.choice({
 " • UNLOCK SIREN", -- 19
 " • FAST CHARACTER", -- 20
 " • BYPASS MENU", -- 21
+"Information", -- 22			
 " ❌ E X I T ❌ ",
 },nil,os.date([[
 ┏━━━━━━━━⋆✪⋆━━━━━━━━┓
