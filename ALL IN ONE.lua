@@ -6982,6 +6982,9 @@ premiumcar()
 elseif lastMenu == "bypassmenu" then
 MENU = 17
 bypassmenu()
+elseif lastMenu == "info" then
+MENU = 18
+info()			
 else
 MENU = 1
 HOME()
