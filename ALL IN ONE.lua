@@ -713,8 +713,8 @@ elseif menu == 21 then
 lastMenu = "bypassmenu"
 bypassmenu()
 elseif menu == 22 then
-lastMenu = "info"
-info()      
+lastMenu = "Info"
+Info()      
 elseif menu == 23 then
 gg.toast("EXIT ✔")
 clearReset()
@@ -6982,9 +6982,9 @@ premiumcar()
 elseif lastMenu == "bypassmenu" then
 MENU = 17
 bypassmenu()
-elseif lastMenu == "info" then
+elseif lastMenu == "Info" then
 MENU = 18
-info()			
+Info()			
 else
 MENU = 1
 HOME()
