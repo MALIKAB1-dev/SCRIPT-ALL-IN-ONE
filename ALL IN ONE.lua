@@ -712,6 +712,9 @@ elseif menu == 21 then
 lastMenu = "bypassmenu"
 bypassmenu()
 elseif menu == 22 then
+lastMenu = "info"
+info()      
+elseif menu == 23 then
 gg.toast("EXIT ✔")
 clearReset()
 os.exit()
@@ -720,6 +723,53 @@ gg.setVisible(false)
 MENU = 0
 end
 end
+
+function Info()
+  local menu = gg.choice({
+    "• 𝙋𝙍𝙀𝙈𝙄𝙐𝙈 𝙋𝘼𝙄𝘿 𝘼𝙇𝙇 𝙄𝙉 𝙊𝙉𝙀 𝙎𝘾𝙍𝙄𝙋𝙏 𝘽𝙔 𝙈𝘼𝙇𝙄𝙆",
+	"• 𝙁𝙊𝙍 𝘼𝙉𝙔 𝙁𝙍𝙀𝙀 𝘼𝙉𝘿 𝙋𝘼𝙄𝘿 𝙎𝙀𝙍𝙑𝙄𝘾𝙀 𝙒𝙃𝘼𝙏𝙎𝘼𝙋𝙋: ",
+	"𝙊𝙍 𝘿𝙄𝙎𝘾𝙊𝙍𝘿",
+    "• 𝘼𝙇𝙃𝘼𝙈𝘿𝙐𝙇𝙄𝙇𝙇𝘼𝙃 𝙒𝙊𝙍𝙇𝘿 𝙏𝙊𝙋 𝙏𝙍𝙐𝙎𝙏𝙀𝘿 𝙎𝙀𝙇𝙇𝙀𝙍",
+  }, nil, "🇵🇸 𝙋𝘼𝙇𝙀𝙎𝙏𝙄𝙉𝙄 🇵🇸")
+  
+  
+  
+  
+  if menu == 1 then Info()
+  elseif menu == 2 then InfoWa()
+  elseif menu == 3 then InfoDc()
+  elseif menu == 4 then Info()
+  end
+end
+
+
+if input == nil then
+gg.setVisible(false)
+MENU = 0
+end
+
+
+function InfoWa()
+gg.copyText("𝙒𝙝𝙖𝙩𝙨𝘼𝙥𝙥: +923408005070")
+gg.toast("𝙏𝙝𝙚 𝙒𝙖 𝙉𝙪𝙢 𝙒𝙖𝙨 𝘾𝙤𝙥𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝘾𝙡𝙞𝙥 𝘽𝙤𝙖𝙧𝙙")
+gg.sleep("2000")
+end
+
+function InfoDc()
+gg.copyText("𝘿𝙞𝙨𝙘𝙤𝙧𝙙: malikab_1")
+gg.toast("𝙏𝙝𝙚 𝘿𝙘 𝙐𝙨𝙚𝙧𝙉𝙖𝙢𝙚 𝙒𝙖𝙨 𝘾𝙤𝙥𝙮 𝙄𝙣 𝙔𝙤𝙪𝙧 𝘾𝙡𝙞𝙥 𝘽𝙤𝙖𝙧𝙙")
+gg.sleep("2000")
+end
+
+
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+
+
+
 
 function moneymenu()
   local menu = { 
