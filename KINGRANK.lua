@@ -1,3 +1,24 @@
+local function pass(...)
+   arg = {...}
+   local pas = gg.prompt
+   ({"ENTER YOUR KEY HERE FOR LOGIN:"}, {}, {"text"})
+   pas = pas and pas[1].." " or os.exit(gg.alert("Exit the script", ""))
+   for i = 1, #arg do
+       if arg[i].. " "==pas then
+          return gg.alert("CORRECT PASSWORD", "")
+      end
+ end
+ while (true) do
+    os.exit(gg.alert("Wrong password", ""))
+ end
+end
+
+
+pass("MALIKXD", "AYUB77", "999", "778", "8966")-- Add password.
+
+
+
+
 gg.toast("✅️𝑨𝒄𝒄𝒆𝒔𝒔 𝒈𝒓𝒂𝒏𝒕𝒆𝒅!✅️")
 gg.sleep("1000")
 
