@@ -15,7 +15,7 @@ local function pass(...)
 end
 
 
-pass("MALIK55", "Ax", "KAIFKHAN", "CH99", "HAMDAN77")-- Add password.
+pass("MALIK55", "AYUB77", "KAIFKHAN", "CH99", "HAMDAN77")-- Add password.
 
 
 
