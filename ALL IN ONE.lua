@@ -865,17 +865,20 @@ end
 
 function coinmenu()
   local menu = gg.choice({
-    "INCREASE COINS",
-    "DECREASE COINS",
+    "GET 500K COINS",
+    "DECREASE COINS(BODYKITS)",
+    "DECREASE COINS(WHEELS)",
     "❌BACK❌"
   }, nil, "🇨 🇴 🇮 🇳    🇲 🇪 🇳 🇺\n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
 
   if menu == 1 then
-    increaseMenu()
+    coins500k()
   elseif menu == 2 then
-    decreaseMenu()
+    reducecoinsbk()
   elseif menu == 3 then
-    backmenu()
+    reducecoinswheel()
+    elseif menu == 4 then
+    backMenu()
   end
 end
 
@@ -885,13 +888,148 @@ HOME()
 end
 
 
--- Coin Increase
-function increaseMenu()
-  gg.alert("WORKING ON IT\nSTATUS MENU=OFF📴")
-end 
-function decreaseMenu()
-gg.alert("WORKING ON IT\nSTATUS MENU=OFF📴")
+function coins500k() -- get 500k coin daily task
+clearReset()
+searchClass = L0_115
+searchClass("Prize", "0x10", false, false, 32)
+local results = gg.getResults(9999)
+for i, result in ipairs(results) do
+result.flags = 4
+result.value = 500000
+result.freeze = true
 end
+gg.clearResults()
+gg.addListItems(results)
+gg.toast("ON")
+gg.setVisible(false)
+gg.alert("GO IN ROOM THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+local choice = gg.alert("COMPLETE DAILY TASK USE ACHIVEMENT MENU FOR COMPLETE MORE FAST","OPEN ACHIVEMENT MENU","OK")
+if choice == 1 then
+achivementmenu()
+end
+clearReset()
+end
+
+function reducecoinsbk() -- reduce coin (body kit)
+clearReset()
+local choice = gg.alert("GO SEE A YTB TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\nhttps://youtu.be/V3fdEs8UCbI","COPY LINK","OK")
+if choice == 1 then
+gg.copyText("https://youtu.be/V3Es8UCbI")
+gg.alert("THE LINK WAS COPIED IN THE CLIPBOARD")
+end
+local d = gg.prompt({
+" ENTER COIN YOU HAVE : ",
+" ENTER COIN YOU WANT : ",
+" BACK ",
+}, nil, {
+"number", 
+"number",
+"checkbox",
+})
+if not d then
+    return gg.toast("Cancel")
+end
+if d[3] then
+coinmenu()
+end
+local ycoin = tonumber(d[1])
+local coinw = tonumber(d[2])
+if not ycoin or not coinw then
+    return gg.alert("Invalid number entered.")
+end
+if coinw >= ycoin then
+    return gg.alert("Only decreasing is allowed.")
+end
+local calc = coinw - ycoin
+local value = -calc
+gg.setVisible(false)
+gg.alert("GO CLICK TO THE PLACE 'NEW CAR' AND CHOOSE A CAR CLICK ON ONE OF THE ARROW OF THE CAR (BODY-KIT) FIND COIN PRICE THEN CLICK ON THE GG LOGO TO START")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+clearReset()
+searchClass = L0_115
+searchClass("KitController", "0x44", false, false, 4)
+local results = gg.getResults(100)
+if #results == 0 then
+    return gg.alert("No results found")
+end
+for i, v in ipairs(results) do
+    v.flags = 4
+    v.value = value
+    v.freeze = true
+end
+gg.addListItems(results)
+gg.setValues(results)
+gg.alert("CLICK ON THE SAME KIT RIGHT ARROW THEN LEFT ARROW THEN BUY THE CAR")
+gg.toast("ON")
+clearReset()
+end
+
+function reducecoinswheel() -- reduce coin (wheel)
+clearReset()
+gg.alert("GO TO EXTERIOR THEN CLICK GG LOGO")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+local d = gg.prompt({
+" ENTER COIN YOU HAVE : ",
+" ENTER COIN YOU WANT : ",
+" BACK ",
+}, nil, {
+"number", 
+"number",
+"checkbox",
+})
+if not d then
+    return gg.toast("Cancel")
+end
+if d[3] then
+coinmenu()
+end
+local ycoin = tonumber(d[1])
+local coinw = tonumber(d[2])
+if not ycoin or not coinw then
+    return gg.alert("Invalid number entered.")
+end
+if coinw >= ycoin then
+    return gg.alert("Only decreasing is allowed.")
+end
+local calc = coinw - ycoin
+local value = -calc
+clearReset()
+searchClass = L0_115
+searchClass("OneWheelData", "0x28", false, false, 4)
+local results = gg.getResults(99999)
+if #results == 0 then
+    return gg.alert("No results found")
+end
+for i, v in ipairs(results) do
+    v.flags = 32
+    v.value = value
+    v.freeze = true
+end
+gg.addListItems(results)
+gg.setValues(results)
+gg.alert("GO BUY 1 WHEEL")
+gg.toast("ON")
+clearReset()
+end
+
 
 function hpmenu()
   local menu = { 
