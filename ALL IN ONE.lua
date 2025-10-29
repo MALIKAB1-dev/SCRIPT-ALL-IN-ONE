@@ -1599,9 +1599,9 @@ function shifttimemenu()
   end
   
   if choice[1] then shifttimeone() end
-  if choice[1] then shifttimetwo() end
-  if choice[1] then shifttimethree() end
-  if choice[1] then backMenu() end
+  if choice[2] then shifttimetwo() end
+  if choice[3] then shifttimethree() end
+  if choice[4] then backMenu() end
 end
 
 function backMenu() 
