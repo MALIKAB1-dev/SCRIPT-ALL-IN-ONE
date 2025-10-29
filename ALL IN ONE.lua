@@ -919,9 +919,9 @@ end
 
 function reducecoinsbk() -- reduce coin (body kit)
 clearReset()
-local choice = gg.alert("GO SEE A YTB TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\nhttps://youtu.be/V3fdEs8UCbI","COPY LINK","OK")
+local choice = gg.alert("GO SEE A VEDIO TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\LINK","COPY LINK","OK")
 if choice == 1 then
-gg.copyText("https://youtu.be/V3Es8UCbI")
+gg.copyText("LINK")
 gg.alert("THE LINK WAS COPIED IN THE CLIPBOARD")
 end
 local d = gg.prompt({
@@ -950,7 +950,7 @@ end
 local calc = coinw - ycoin
 local value = -calc
 gg.setVisible(false)
-gg.alert("GO CLICK TO THE PLACE 'NEW CAR' AND CHOOSE A CAR CLICK ON ONE OF THE ARROW OF THE CAR (BODY-KIT) FIND COIN PRICE THEN CLICK ON THE GG LOGO TO START")
+gg.alert("GO TO NEW CAR STORE AND  CHOOSE A CAR NUMBER 155 CLICK ON ONE OF THE ARROW OF THE CAR (BODY-KIT) FIND COIN PRICE THEN CLICK ON THE GG LOGO TO START")
 while true do
 if gg.isVisible() then
 break
