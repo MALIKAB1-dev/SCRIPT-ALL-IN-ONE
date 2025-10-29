@@ -864,7 +864,7 @@ clearReset()
 end
 
 function coinmenu()
-local menu = gg.choice({
+  local menu = gg.choice({
     "INCREASE COINS",
     "DECREASE COINS",
     "❌BACK❌"
@@ -1014,6 +1014,10 @@ gg.clearResults()
   gg.alert("For the same kit: click right arrow then left arrow, and purchase the car.")
   gg.toast("Coin value reduced by " .. fark)
 end
+
+
+
+
 
 function hpmenu()
   local menu = { 
