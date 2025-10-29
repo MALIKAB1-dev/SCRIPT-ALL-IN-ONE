@@ -864,24 +864,19 @@ clearReset()
 end
 
 function coinmenu()
-  local menu = { 
-" GET 500K COINS ", 
-" REDUCE COINS (BODYKITS)",  
-" REDUCE COINS (WHEELS)",  
-" ❌ B A C K ❌ ",
-  }
-  
-  local choice = gg.multiChoice(menu, nil, "🇨 🇴 🇮 🇳 🇸    🇲 🇪 🇳 🇺 ")
-  
-  if not choice then
-    gg.toast("Menu closed")
-    return
-  end
+local menu = gg.choice({
+    "INCREASE COINS",
+    "DECREASE COINS",
+    "❌BACK❌"
+  }, nil, "🇨 🇴 🇮 🇳    🇲 🇪 🇳 🇺\n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
 
-  if choice[1] then  getcoins() end
-  if choice[2] then reducecoinsbk() end
-  if choice[3] then  reducecoinswheel() end
-  if choice[4] then backMenu() end
+  if menu == 1 then
+    increaseMenu()
+  elseif menu == 2 then
+    decreaseMenu()
+  elseif menu == 3 then
+    backmenu()
+  end
 end
 
 function backMenu() 
@@ -889,148 +884,136 @@ lastMenu = "HOME"
 HOME()
 end
 
-function getcoins() -- get 500k coin daily task
-clearReset()
-searchClass = L0_115
-searchClass("Prize", "0x10", false, false, 32)
-local results = gg.getResults(9999)
-for i, result in ipairs(results) do
-result.flags = 4
-result.value = 500000
-result.freeze = true
+
+-- Coin Increase
+function increaseMenu()
+  local menu = gg.choice({
+    "Add 10K Coins",
+    "Add 20K Coins",
+    "Add 30K Coins",
+    "Add 500K Coins",
+    "Custom Coin Increase",
+    "❌BACK❌"
+  }, nil, "🇮 🇳 🇨 🇷 🇪 🇦 🇸 🇪   🇲 🇪 🇳 🇺 \n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
+
+  local miktarlar = {10000, 20000, 30000, 500000}
+  if menu and menu >= 1 and menu <= 4 then
+    setCoinToTarget(miktarlar[menu])
+  elseif menu == 5 then
+    applyCustomCoinIncrease()
+  elseif menu == 6 then
+    coinmenu()
+  end
 end
+
+function setCoinToTarget(hedef)
+  local input = gg.prompt({"Enter current coin amount:"}, nil, {"number"})
+  if not input then return gg.alert("Operation canceled.") end
+
+  local mevcut = tonumber(input[1])
+  if not mevcut then return gg.alert("Invalid number entered.") end
+  if hedef <= mevcut then return gg.alert("Only increases allowed.") end
+
+  local fark = hedef - mevcut
+  degerarama("Prize", "0x10", false, false, 32)
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = fark end
+  gg.setValues(results)
 gg.clearResults()
-gg.addListItems(results)
-gg.toast("ON")
-gg.setVisible(false)
-gg.alert("GO IN ROOM THEN CLICK ON THE GG LOGO TO START")
-while true do
-if gg.isVisible() then
-break
-else
-gg.sleep(50)
-end end
-gg.setVisible(false)
-local choice = gg.alert("COMPLETE DAILY TASK USE ACHIVEMENT MENU FOR COMPLETE MORE FAST","OPEN ACHIVEMENT MENU","OK")
-if choice == 1 then
-achivementmenu()
-end
-clearReset()
+  gg.alert("Enter the room and complete one of the daily tasks.\nYou can quickly complete any task from the Achievements menu.")
+  gg.toast("Coin value increased by " .. fark)
 end
 
-function reducecoinsbk() -- reduce coin (body kit)
-clearReset()
-local choice = gg.alert("GO SEE A YTB TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\nhttps://youtu.be/V3fdEs8UCbI","COPY LINK","OK")
-if choice == 1 then
-gg.copyText("https://youtu.be/dEs8UCbI")
-gg.alert("THE LINK WAS COPIED IN THE CLIPBOARD")
-end
-local d = gg.prompt({
-" ENTER COIN YOU HAVE : ",
-" ENTER COIN YOU WANT : ",
-" BACK ",
-}, nil, {
-"number", 
-"number",
-"checkbox",
-})
-if not d then
-    return gg.toast("Cancel")
-end
-if d[3] then
-coinmenu()
-end
-local ycoin = tonumber(d[1])
-local coinw = tonumber(d[2])
-if not ycoin or not coinw then
-    return gg.alert("Invalid number entered.")
-end
-if coinw >= ycoin then
-    return gg.alert("Only decreasing is allowed.")
-end
-local calc = coinw - ycoin
-local value = -calc
-gg.setVisible(false)
-gg.alert("GO CLICK TO THE PLACE 'NEW CAR' AND CHOOSE A CAR CLICK ON ONE OF THE ARROW OF THE CAR (BODY-KIT) FIND COIN PRICE THEN CLICK ON THE GG LOGO TO START")
-while true do
-if gg.isVisible() then
-break
-else
-gg.sleep(50)
-end end
-clearReset()
-searchClass = L0_115
-searchClass("KitController", "0x44", false, false, 4)
-local results = gg.getResults(100)
-if #results == 0 then
-    return gg.alert("No results found")
-end
-for i, v in ipairs(results) do
-    v.flags = 4
-    v.value = value
-    v.freeze = true
-end
-gg.addListItems(results)
-gg.setValues(results)
-gg.alert("CLICK ON THE SAME KIT RIGHT ARROW THEN LEFT ARROW THEN BUY THE CAR")
-gg.toast("ON")
-clearReset()
+function applyCustomCoinIncrease()
+  local input = gg.prompt({"Current coin amount:", "Target coin amount:"}, nil, {"number", "number"})
+  if not input then return gg.alert("Operation canceled.") end
+
+  local mevcut, hedef = tonumber(input[1]), tonumber(input[2])
+  if not mevcut or not hedef then return gg.alert("Invalid number.") end
+  if hedef <= mevcut then return gg.alert("Only increases allowed.") end
+
+  local fark = hedef - mevcut
+  degerarama("Prize", "0x10", false, false, 32)
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = fark end
+  gg.setValues(results)
+gg.clearResults()
+  gg.alert("Enter the room and complete one of the daily tasks.\nYou can quickly complete any task from the Achievements menu.")
+  gg.toast("Coin value increased by " .. fark)
 end
 
-function reducecoinswheel() -- reduce coin (wheel)
-clearReset()
-gg.alert("GO TO EXTERIOR THEN CLICK GG LOGO")
-while true do
-if gg.isVisible() then
-break
-else
-gg.sleep(50)
-end end
-gg.setVisible(false)
-local d = gg.prompt({
-" ENTER COIN YOU HAVE : ",
-" ENTER COIN YOU WANT : ",
-" BACK ",
-}, nil, {
-"number", 
-"number",
-"checkbox",
-})
-if not d then
-    return gg.toast("Cancel")
-end
-if d[3] then
-coinmenu()
-end
-local ycoin = tonumber(d[1])
-local coinw = tonumber(d[2])
-if not ycoin or not coinw then
-    return gg.alert("Invalid number entered.")
-end
-if coinw >= ycoin then
-    return gg.alert("Only decreasing is allowed.")
-end
-local calc = coinw - ycoin
-local value = -calc
-clearReset()
-searchClass = L0_115
-searchClass("OneWheelData", "0x28", false, false, 4)
-local results = gg.getResults(99999)
-if #results == 0 then
-    return gg.alert("No results found")
-end
-for i, v in ipairs(results) do
-    v.flags = 32
-    v.value = value
-    v.freeze = true
-end
-gg.addListItems(results)
-gg.setValues(results)
-gg.alert("GO BUY 1 WHEEL")
-gg.toast("ON")
-clearReset()
+-- Coin Reduction
+function decreaseMenu()
+  local menu = gg.choice({
+    "Reduce 10K Coins",
+    "Reduce 20K Coins",
+    "Reduce 30K Coins", 
+    "Reduce 500K Coins",
+    "Custom Coin Reduction",
+    "❌BACK❌"
+  }, nil, "🇩 🇪 🇨 🇷 🇪 🇦 🇸 🇪   🇨 🇴 🇮 🇳 🇸 \n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
+
+  local miktarlar = {10000, 20000, 30000, 500000}
+  if menu and menu >= 1 and menu <= 4 then
+    decreaseCoinByTarget(miktarlar[menu])
+  elseif menu == 5 then
+    applyCustomCoinDecrease()
+  elseif menu == 6 then
+    coinmenu()
+  end
 end
 
+function decreaseCoinByTarget(hedef)
+  gg.alert("Please follow the steps carefully:\n\n1. Go to car purchase section\n2. Select a car\n3. Click on arrow indicators on the car\n4. Choose coin-based body kit\n5. Then click GG")
+  repeat until gg.isVisible() gg.setVisible(false)
+
+  local input = gg.prompt({"Enter current coin amount:"}, nil, {"number"})
+  if not input then return gg.alert("Operation canceled.") end
+
+  local mevcut = tonumber(input[1])
+  if not mevcut then return gg.alert("Invalid number.") end
+  if hedef >= mevcut then return gg.alert("Only reductions allowed.") end
+
+  local fark = mevcut - hedef
+  local yazilacakSayi = -fark
+  degerarama("KitController", "0x44", false, false, 4)
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = yazilacakSayi end
+  gg.setValues(results)
+gg.clearResults()
+  gg.alert("For the same kit: click right arrow then left arrow, and purchase the car.")
+  gg.toast("Coin value reduced by " .. fark)
+end
+
+function applyCustomCoinDecrease()
+  gg.alert("Please follow the steps carefully:\n\n1. Go to car purchase section\n2. Select a car\n3. Click on arrow indicators on the car\n4. Choose coin-based body kit\n5. Then click GG")
+  repeat until gg.isVisible() gg.setVisible(false)
+
+  local input = gg.prompt({"Current coins:", "Target coins:"}, nil, {"number", "number"})
+  if not input then return gg.alert("Operation canceled.") end
+
+  local mevcut, hedef = tonumber(input[1]), tonumber(input[2])
+  if not mevcut or not hedef then return gg.alert("Invalid number.") end
+  if hedef >= mevcut then return gg.alert("Only reductions allowed.") end
+
+  local fark = mevcut - hedef
+  local yazilacakSayi = -fark
+  degerarama("KitController", "0x44", false, false, 4)
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = yazilacakSayi end
+  gg.setValues(results)
+gg.clearResults()
+  gg.alert("For the same kit: click right arrow then left arrow, and purchase the car.")
+  gg.toast("Coin value reduced by " .. fark)
+end
 
 function hpmenu()
   local menu = { 
