@@ -919,7 +919,7 @@ end
 
 function reducecoinsbk() -- reduce coin (body kit)
 clearReset()
-local choice = gg.alert("GO SEE A VEDIO TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\LINK","COPY LINK","OK")
+local choice = gg.alert("GO SEE A VEDIO TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\nLINK","COPY LINK","OK")
 if choice == 1 then
 gg.copyText("LINK")
 gg.alert("THE LINK WAS COPIED IN THE CLIPBOARD")
