@@ -865,19 +865,16 @@ end
 
 function coinmenu()
   local menu = gg.choice({
-    "GET 500K COINS",
-    "DECREASE COINS(BODYKITS)",
-    "DECREASE COINS(WHEELS)",
-    "❌BACK❌"
+    "𝙄𝙉𝘾𝙍𝙀𝘼𝙎𝙀 𝘾𝙊𝙄𝙉𝙎",
+    "𝘿𝙀𝘾𝙍𝙀𝘼𝙎𝙀 𝘾𝙊𝙄𝙉𝙎",
+    "✖️𝘽𝘼𝘾𝙆✖️",
   }, nil, "🇨 🇴 🇮 🇳    🇲 🇪 🇳 🇺\n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
 
   if menu == 1 then
-    coins500k()
-  elseif menu == 2 then
-    reducecoinsbk()
-  elseif menu == 3 then
-    reducecoinswheel()
-    elseif menu == 4 then
+    IncreaseCoins()
+    elseif menu == 2 then
+    reducedcoins()
+    elseif menu == 3 then
     backMenu()
   end
 end
@@ -887,96 +884,78 @@ lastMenu = "HOME"
 HOME()
 end
 
+function IncreaseCoins()
+  local menu = gg.choice({
+    "𝘼𝘿𝘿 10𝙆 𝘾𝙊𝙄𝙉𝙎",
+    "𝘼𝘿𝘿 20𝙆 𝘾𝙊𝙄𝙉𝙎",
+    "𝘼𝘿𝘿 30𝙆 𝘾𝙊𝙄𝙉𝙎",
+    "𝘼𝘿𝘿 500𝙆 𝘾𝙊𝙄𝙉𝙎",
+    "𝘾𝙐𝙎𝙏𝙊𝙈 𝘾𝙊𝙄𝙉𝙎 𝙄𝙉𝘾𝙍𝙀𝘼𝙎𝙀",
+    "✖️𝘽𝘼𝘾𝙆✖️",
+  }, nil, "🇮 🇳 🇨 🇷 🇪 🇦 🇸 🇪   🇨 🇴 🇮 🇳 🇸 \n"..os.date('\n☀️𝑻𝒐𝒅𝒂𝒚 : %d %B %Y\n⌚𝑻𝒊𝒎𝒆 : %I:%M %p \n'))
 
-function coins500k() -- get 500k coin daily task
-clearReset()
-searchClass = L0_115
+  local miktarlar = {10000, 20000, 30000, 500000}
+  if menu and menu >= 1 and menu <= 4 then
+    setCoinToTarget(miktarlar[menu])
+  elseif menu == 5 then
+    applyCustomCoinIncrease()
+  elseif menu == 6 then
+    coinmenu()
+  end
+  end
+
+function setCoinToTarget(hedef)
+  local input = gg.prompt({"Enter current coin amount:"}, nil, {"number"})
+  if not input then return gg.alert("Operation canceled.") end
+
+  local mevcut = tonumber(input[1])
+  if not mevcut then return gg.alert("Invalid number entered.") end
+  if hedef <= mevcut then return gg.alert("Only increases allowed.") end
+
+  local fark = hedef - mevcut
+  searchClass = L0_115
 searchClass("Prize", "0x10", false, false, 32)
-local results = gg.getResults(9999)
-for i, result in ipairs(results) do
-result.flags = 4
-result.value = 500000
-result.freeze = true
-end
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = fark end
+  gg.setValues(results)
 gg.clearResults()
-gg.addListItems(results)
-gg.toast("ON")
-gg.setVisible(false)
-gg.alert("GO IN ROOM THEN CLICK ON THE GG LOGO TO START")
-while true do
-if gg.isVisible() then
-break
-else
-gg.sleep(50)
-end end
-gg.setVisible(false)
-local choice = gg.alert("COMPLETE DAILY TASK USE ACHIVEMENT MENU FOR COMPLETE MORE FAST","OPEN ACHIVEMENT MENU","OK")
+  local choice = gg.alert("COMPLETE DAILY TASK USE ACHIVEMENT MENU FOR COMPLETE MORE FAST","OPEN ACHIVEMENT MENU","OK")
 if choice == 1 then
 achivementmenu()
 end
 clearReset()
 end
 
-function reducecoinsbk() -- reduce coin (body kit)
-clearReset()
-local choice = gg.alert("GO SEE A VEDIO TUTORIAL TO BETTER UNDERSTAND HOW TO DO\n\nLINK","COPY LINK","OK")
+
+function applyCustomCoinIncrease()
+  local input = gg.prompt({"𝒄𝒖𝒓𝒓𝒆𝒏𝒕 𝒄𝒐𝒊𝒏 𝒂𝒎𝒐𝒖𝒏𝒕:", "𝑻𝒂𝒓𝒈𝒆𝒕 𝑪𝒐𝒊𝒏 𝒂𝒎𝒐𝒖𝒏𝒕:"}, nil, {"number", "number"})
+  if not input then return gg.alert("𝑶𝒑𝒆𝒓𝒂𝒕𝒊𝒐𝒏 𝒄𝒂𝒏𝒄𝒆𝒍𝒆𝒅") end
+
+  local mevcut, hedef = tonumber(input[1]), tonumber(input[2])
+  if not mevcut or not hedef then return gg.alert("Invalid number.") end
+  if hedef <= mevcut then return gg.alert("𝑶𝒏𝒍𝒚 𝒊𝒏𝒄𝒓𝒆𝒂𝒔𝒆 𝒂𝒍𝒍𝒐𝒘𝒆𝒅.") end
+
+  local fark = hedef - mevcut
+  searchClass = L0_115
+searchClass("Prize", "0x10", false, false, 32)
+  local results = gg.getResults(100)
+  if #results == 0 then return gg.alert("No results found!") end
+
+  for i, v in ipairs(results) do v.value = fark end
+  gg.setValues(results)
+gg.clearResults()
+  local choice = gg.alert("COMPLETE DAILY TASK USE ACHIVEMENT MENU FOR COMPLETE MORE FAST","OPEN ACHIVEMENT MENU","OK")
 if choice == 1 then
-gg.copyText("LINK")
-gg.alert("THE LINK WAS COPIED IN THE CLIPBOARD")
+achivementmenu()
 end
-local d = gg.prompt({
-" ENTER COIN YOU HAVE : ",
-" ENTER COIN YOU WANT : ",
-" BACK ",
-}, nil, {
-"number", 
-"number",
-"checkbox",
-})
-if not d then
-    return gg.toast("Cancel")
-end
-if d[3] then
-coinmenu()
-end
-local ycoin = tonumber(d[1])
-local coinw = tonumber(d[2])
-if not ycoin or not coinw then
-    return gg.alert("Invalid number entered.")
-end
-if coinw >= ycoin then
-    return gg.alert("Only decreasing is allowed.")
-end
-local calc = coinw - ycoin
-local value = -calc
-gg.setVisible(false)
-gg.alert("GO TO NEW CAR STORE AND  CHOOSE A CAR NUMBER 155 CLICK ON ONE OF THE ARROW OF THE CAR (BODY-KIT) FIND COIN PRICE THEN CLICK ON THE GG LOGO TO START")
-while true do
-if gg.isVisible() then
-break
-else
-gg.sleep(50)
-end end
-clearReset()
-searchClass = L0_115
-searchClass("KitController", "0x44", false, false, 4)
-local results = gg.getResults(100)
-if #results == 0 then
-    return gg.alert("No results found")
-end
-for i, v in ipairs(results) do
-    v.flags = 4
-    v.value = value
-    v.freeze = true
-end
-gg.addListItems(results)
-gg.setValues(results)
-gg.alert("CLICK ON THE SAME KIT RIGHT ARROW THEN LEFT ARROW THEN BUY THE CAR")
-gg.toast("ON")
 clearReset()
 end
 
-function reducecoinswheel() -- reduce coin (wheel)
+  
+
+function reducedcoins() -- reduce coin (wheel)
 clearReset()
 gg.alert("GO TO EXTERIOR THEN CLICK GG LOGO")
 while true do
@@ -1029,6 +1008,7 @@ gg.alert("GO BUY 1 WHEEL")
 gg.toast("ON")
 clearReset()
 end
+
 
 
 function hpmenu()
