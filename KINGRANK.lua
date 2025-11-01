@@ -1,3 +1,4 @@
+
 local function pass(...)
    arg = {...}
    local pas = gg.prompt
@@ -5,16 +6,16 @@ local function pass(...)
    pas = pas and pas[1].." " or os.exit(gg.alert("Exit the script", ""))
    for i = 1, #arg do
        if arg[i].. " "==pas then
-          return gg.alert("CORRECT PASSWORD", "")
+          return gg.alert("𝑪𝑶𝑹𝑹𝑬𝑪𝑻 𝑲𝑬𝒀✅️\n\n🦋⁂༄₩ԑ₰cơෆℯ༄⁂🦋", "")
       end
  end
  while (true) do
-    os.exit(gg.alert("Wrong password", ""))
+    os.exit(gg.alert("𝑾𝑹𝑶𝑵𝑮 𝑲𝑬𝒀 ❌\n\n𝑬𝑵𝑻𝑬𝑹 𝑯𝑬𝑹𝑬 𝒀𝑶𝑼𝑹 𝑪𝑶𝑹𝑹𝑬𝑪𝑻 𝑲𝑬𝒀 𝑭𝑶𝑹 𝑳𝑶𝑮𝑰𝑵 ", ""))
  end
 end
 
 
-pass("MALIKXD", "AYUB77", "999", "778", "8966")-- Add password.
+pass("MALIK88", "AYUB55", "FH", "899", "099")-- Add password.
 
 
 
