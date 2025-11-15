@@ -10,12 +10,12 @@ local function pass(...)
       end
  end
  while (true) do
-    os.exit(gg.alert("𝑾𝑹𝑶𝑵𝑮 𝑲𝑬𝒀 ❌\n\n𝑬𝑵𝑻𝑬𝑹 𝑯𝑬𝑹𝑬 𝒀𝑶𝑼𝑹 𝑪𝑶𝑹𝑹𝑬𝑪𝑻 𝑲𝑬𝒀 𝑭𝑶𝑹 𝑳𝑶𝑮𝑰𝑵 ", ""))
+    os.exit(gg.alert("𝑺𝒐𝒓𝒓𝒚 𝑩𝒖𝒅𝒊𝒆𝒔 𝑺𝒄𝒓𝒊𝒑𝒕 𝒊𝒔 𝑶𝒇𝒇 𝑫𝒖𝒆 𝑻𝒐 𝑯𝒐𝒔𝒕𝒊𝒏𝒈 𝑨𝒏𝒅 𝑴𝒖𝒄𝒉 𝑨𝒏𝒐𝒕𝒉𝒆𝒓 𝑰𝒔𝒔𝒖𝒆𝒔 𝑲𝒊𝒏𝒅𝒍𝒚 𝑩𝒆 𝑷𝒂𝒕𝒊𝒆𝒏𝒕 𝒇𝒐𝒓 1,2 𝑫𝒂𝒚𝒔 𝑾𝒆 𝑪𝒂𝒏 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏 𝑰𝒕 𝑭𝒐𝒓 𝑭𝒊𝒙𝒊𝒏𝒈 𝑰𝒕", ""))
  end
 end
 
 
-pass("MALIK55", "AYUB77", "KAIFKHAN", "6611", "HAMDAN77")-- Add password.
+pass("MALIKXG", "NHK", "NHF", "NKG", "GGF")-- Add password.
 
 
 
