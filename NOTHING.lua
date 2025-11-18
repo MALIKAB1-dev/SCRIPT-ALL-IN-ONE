@@ -1,4 +1,4 @@
-gg.alert("𝑺𝒄𝒓𝒊𝒑𝒕 𝑵𝒆𝒘 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝑰𝒔 𝑶𝒖𝒕 𝑴𝒂𝒏𝒚 𝑩𝒖𝒈𝒔 𝑨𝒏𝒅 𝑰𝒔𝒔𝒖𝒆𝒔 𝑺𝒐𝒍𝒗𝒆𝒅 𝑰𝒇 𝒀𝒐𝒖 𝑭𝒊𝒏𝒅 𝑨𝒏𝒚 𝑨𝒏𝒐𝒕𝒉𝒆𝒓 𝑰𝒔𝒔𝒖𝒆 𝑰𝒏  𝑺𝒄𝒓𝒊𝒑𝒕 𝑻𝒉𝒆𝒏 𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝑻𝒉𝒆 𝑫𝒆𝒗")
+gg.alert("𝑺𝒄𝒓𝒊𝒑𝒕 𝑵𝒆𝒘 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝑰𝒔 𝑶𝒖𝒕 𝑴𝒂𝒏𝒚 𝑩𝒖𝒈𝒔 𝑨𝒏𝒅 𝑰𝒔𝒔𝒖𝒆𝒔 𝑺𝒐𝒍𝒗𝒆𝒅 𝑰𝒇 𝒀𝒐𝒖 𝑭𝒊𝒏𝒅 𝑨𝒏𝒚 𝑨𝒏𝒐𝒕𝒉𝒆𝒓 𝑰𝒔𝒔𝒖𝒆 𝑰𝒏  𝑺𝒄𝒓𝒊𝒑𝒕 𝑻𝒉𝒆𝒏 𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝑻𝒉𝒆 𝑫𝒆𝒗/n𝑺𝒐𝒐𝒏 𝑵𝒆𝒘 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑪𝒐𝒎𝒆 𝑶𝒖𝒕 𝑾𝒆 𝑾𝒊𝒍𝒍 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏 𝑰𝒕𝒔 𝑵𝒐𝒘.....")
 
 
 
@@ -18,7 +18,7 @@ local function pass(...)
 end
 
 
-pass("MALIKXG", "NHK", "NHF", "NKG", "GGF")-- Add password.
+pass("MALIKXGG", "KAIFKHAN", "NHF", "NKG", "GGF")-- Add password.
 
 
 
@@ -645,7 +645,8 @@ local menu = gg.choice({
 " • UNLOCK SIREN", -- 19
 " • FAST CHARACTER", -- 20
 " • BYPASS MENU", -- 21
-"𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉", -- 22			
+" • Prank Menu", -- 22		
+"𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉", -- 23			
 " ❌ E X I T ❌ ",
 },nil,os.date([[
 ┏━━━━━━━━⋆✪⋆━━━━━━━━┓
@@ -717,8 +718,11 @@ lastMenu = "bypassmenu"
 bypassmenu()
 elseif menu == 22 then
 lastMenu = "Info"
-Info()      
+Info()      	
 elseif menu == 23 then
+lastMenu = "prankmenu"
+prankmenu() 		
+elseif menu == 24 then
 gg.toast("EXIT ✔")
 clearReset()
 os.exit()
@@ -6853,7 +6857,9 @@ gg.toast("ON")
 clearReset()
 end
 
-
+function prankmenu()
+gg.alert("𝑺𝒐𝒐𝒏")
+𝒆𝒏𝒅
 
 function wallhack() -- cross walls
 gg.setVisible(false)
@@ -6917,6 +6923,8 @@ local results = gg.getResults(gg.getResultsCount())
     gg.clearResults()
   end
 end
+
+
 
 while true do
 if gg.isVisible(true) then
