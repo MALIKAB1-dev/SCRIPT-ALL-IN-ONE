@@ -1,5 +1,5 @@
 gg.toast("𝙎𝙘𝙧𝙞𝙥𝙩 𝙎𝙩𝙖𝙩𝙪𝙨 = 𝙊𝙣 👻")
-
+gg.sleep(1000)
 
 local function pass(...)
    arg = {...}
@@ -641,10 +641,10 @@ gg.sleep(750)
 gg.toast("༒■■■■■■■■■■100%༒")
 gg.sleep(800)
 gg.toast("༒SCRIPT BY MALIK ABUBAKKER ༒")
-gg.sleep(1000)
+gg.sleep(1500)
   print("━╣ONLY MALIK ABUBAKKER!╠━")
   gg.setVisible(false)
-  gg.alert("SCRIPT BY MALIKXD!")
+  gg.toast("SCRIPT BY MALIKXD!")
   
 
 
