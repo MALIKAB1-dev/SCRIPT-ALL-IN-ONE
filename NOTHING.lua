@@ -1,5 +1,4 @@
-gg.alert("𝑺𝒄𝒓𝒊𝒑𝒕 𝑵𝒆𝒘 𝑽𝒆𝒓𝒔𝒊𝒐𝒏 𝑰𝒔 𝑶𝒖𝒕 𝑴𝒂𝒏𝒚 𝑩𝒖𝒈𝒔 𝑨𝒏𝒅 𝑰𝒔𝒔𝒖𝒆𝒔 𝑺𝒐𝒍𝒗𝒆𝒅 𝑰𝒇 𝒀𝒐𝒖 𝑭𝒊𝒏𝒅 𝑨𝒏𝒚 𝑨𝒏𝒐𝒕𝒉𝒆𝒓 𝑰𝒔𝒔𝒖𝒆 𝑰𝒏  𝑺𝒄𝒓𝒊𝒑𝒕 𝑻𝒉𝒆𝒏 𝑪𝒐𝒏𝒕𝒂𝒄𝒕 𝑻𝒉𝒆 𝑫𝒆𝒗\n\n𝑺𝒐𝒐𝒏 𝑵𝒆𝒘 𝑭𝒆𝒂𝒕𝒖𝒓𝒆𝒔 𝑪𝒐𝒎𝒆 𝑶𝒖𝒕 𝑾𝒆 𝑾𝒊𝒍𝒍 𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏 𝑰𝒕𝒔 𝑵𝒐𝒘.....")
-
+gg.toast("𝙎𝙘𝙧𝙞𝙥𝙩 𝙎𝙩𝙖𝙩𝙪𝙨 = 𝙊𝙣 👻")
 
 
 local function pass(...)
@@ -23,11 +22,7 @@ pass("MALIKXGG", "KAIFKHAN", "NHF", "NKG", "GGF")-- Add password.
 
 
 
-print([[
-Mᴀʟɪᴋ Aʙᴜʙᴀᴋᴋᴇʀ Oɴ Tᴏᴘ?
-]])
-local MENU = 0
-local lastMenu = nil
+
 
 GLabel = 'Car Parking'
 GProcess = 'com.olzhas.carparking.multyplayer'
@@ -618,6 +613,42 @@ unlw16 = off
 -- bypass
 nodamageEngine = off
 crosswall = off
+
+
+--- RUNNING 
+running = true
+TEMPLATE = 1
+gg.setVisible(false)
+gg.alert("༒ 𝚠𝚎𝚕𝚌𝚘𝚖𝚎 💕༒")
+gg.toast("༒□□□□□□□□□□0%༒")
+gg.sleep(100)
+gg.toast("༒■□□□□□□□□□10%༒")
+gg.sleep(200)
+gg.toast("༒■■□□□□□□□□20%༒")
+gg.sleep(300)
+gg.toast("༒■■■□□□□□□□30%༒")
+gg.sleep(400)
+gg.toast("༒■■■■□□□□□□40%༒")
+gg.sleep(500)
+gg.toast("༒■■■■■□□□□□50%༒")
+gg.sleep(550)
+gg.toast("༒■■■■■■□□□□60%༒")
+gg.sleep(600)
+gg.toast("༒■■■■■■■□□□70%༒")
+gg.sleep(650)
+gg.toast("༒■■■■■■■■□□80%༒")
+gg.sleep(700)
+gg.toast("༒■■■■■■■■■□90%༒")
+gg.sleep(750)
+gg.toast("༒■■■■■■■■■■100%༒")
+gg.sleep(800)
+gg.toast("༒SCRIPT BY MALIK ABUBAKKER ༒")
+gg.sleep(1000)
+  print("━╣ONLY MALIK ABUBAKKER!╠━")
+  gg.setVisible(false)
+  gg.alert("SCRIPT BY MALIKXD!")
+  
+
 
 clearReset()
 gg.toast("SCRIPT LOADED:CLICK ON GG")
@@ -6989,5 +7020,17 @@ else
 MENU = 1
 HOME()
 end
+end
+end
+
+
+while running do
+if gg.isVisible(true) then
+TEMPLATE = 1
+gg.setVisible(false)
+end
+if TEMPLATE == 1 then
+Home()
+TEMPLATE = -1
 end
 end
