@@ -24,21 +24,6 @@ pass("MALIKXGG", "KAIFKHAN", "NHF", "NKG", "GGF")-- Add password.
 
 
 
-GLabel = 'Car Parking'
-GProcess = 'com.olzhas.carparking.multyplayer'
-GVersion = '4.9.5'
-
-local v = gg.getTargetInfo()
-if v.processName~=GProcess then
-gg.alert("This Script is For:\n"..GLabel.."\n"..GProcess.."\n\nYou Selected:\n"..v.label.."\n"..v.processName)
-return
-end
-
-if GVersion~=v.versionName then
-gg.alert("This Script is for Game Version:\n"..GVersion.."\n\nYour Game Version is:\n"..v.versionName) 
-gg.setVisible(false)
-return
-end
 
 local info = gg.getTargetInfo()
 if info.x64 then
