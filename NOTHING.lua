@@ -20,6 +20,25 @@ end
 pass("MALIKXGG", "KAIFKHAN", "NHF", "NKG", "GGF")-- Add password.
 
 
+-- Constants
+local GLabel = 'Car Parking'
+local GProcess = 'com.olzhas.carparking.multyplayer'
+local GVersion = '4.9.5'
+
+-- App Validation
+local v = gg.getTargetInfo()
+if v ~= nil and v.processName ~= GProcess then
+  gg.alert("The Car Parking version required to use this script:\n"..GLabel.."\n"..GProcess..
+           "\n\nYour current version:\n"..v.label.."\n"..v.processName)
+  os.exit()
+end
+
+if v ~= nil and v.versionName ~= GVersion then
+  gg.alert("Required script version:\n"..GVersion..
+           "\n\nYour current version:\n"..v.versionName)
+  os.exit()
+end
+
 
 
 
