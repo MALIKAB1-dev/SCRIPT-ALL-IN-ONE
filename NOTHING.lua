@@ -25,12 +25,6 @@ pass("MALIKXGG", "KAIFKHAN", "NHF", "NKG", "GGF")-- Add password.
 
 
 
-local info = gg.getTargetInfo()
-if info.x64 then
-else
-gg.alert("⚠ This script supports 64-bit ⚠")
-end
-
 local gg = gg
 
 if true then
