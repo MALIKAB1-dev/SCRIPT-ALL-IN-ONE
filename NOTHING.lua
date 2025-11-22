@@ -674,8 +674,9 @@ local menu = gg.choice({
 " • UNLOCK SIREN", -- 19
 " • FAST CHARACTER", -- 20
 " • BYPASS MENU", -- 21
-" • Prank Menu", -- 22		
-"𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉", -- 23			
+" • PRANK MENU", -- 22	
+" • KING RANK", -- 23			
+"𝙄𝙉𝙁𝙊𝙍𝙈𝘼𝙏𝙄𝙊𝙉", -- 24			
 " ❌ E X I T ❌ ",
 },nil,os.date([[
 ┏━━━━━━━━⋆✪⋆━━━━━━━━┓
@@ -747,11 +748,14 @@ lastMenu = "bypassmenu"
 bypassmenu()
 elseif menu == 22 then
 lastMenu = "prankmenu"
-prankmenu()      	
+prankmenu()   
 elseif menu == 23 then
+lastMenu = "kingrankk"
+kingrankk()		
+elseif menu == 24 then
 lastMenu = "Info"
 Info() 		
-elseif menu == 24 then
+elseif menu == 25 then
 gg.toast("EXIT ✔")
 clearReset()
 os.exit()
@@ -6955,6 +6959,90 @@ function prankmenu()
 gg.alert("𝑾𝒐𝒓𝒌𝒊𝒏𝒈 𝑶𝒏 𝑰𝒕 𝑺𝒐𝒐𝒏 𝑾𝒆 𝑾𝒊𝒍𝒍 𝑳𝒂𝒖𝒏𝒄𝒉 𝑰𝒕")
 end
 
+function kingrankk() -- KING RANK
+
+gg.alert("𝑻𝒉𝒊𝒔 𝑭𝒆𝒂𝒕𝒖𝒓𝒆 𝑭𝒐𝒓 𝑶𝒏𝒍𝒚 𝑻𝒉𝒐𝒔𝒆 𝑷𝒆𝒐𝒑𝒍𝒆 𝑾𝒉𝒐 𝑪𝒂𝒏 𝑩𝒖𝒚 𝑰𝒕\n\n𝑩𝒖𝒚 𝑻𝒉𝒆 𝑲𝒆𝒚 𝑭𝒐𝒓 𝑬𝒏𝒋𝒐𝒚𝒊𝒏𝒈 𝑲𝒊𝒏𝒈 𝑹𝒂𝒏𝒌 𝑶𝒏 𝒀𝒐𝒖𝒓 𝑨𝒍𝒍 𝑨𝒄𝒄𝒐𝒖𝒏𝒕𝒔")
+
+
+
+local function pass(...)
+   arg = {...}
+   local pas = gg.prompt
+   ({"ENTER YOUR KEY HERE FOR LOGIN:"}, {}, {"text"})
+   pas = pas and pas[1].." " or os.exit(gg.alert("Exit the script", ""))
+   for i = 1, #arg do
+       if arg[i].. " "==pas then
+          return gg.alert("𝑪𝑶𝑹𝑹𝑬𝑪𝑻 𝑲𝑬𝒀✅️\n\n🦋⁂༄₩ԑ₰cơෆℯ༄⁂🦋", "")
+      end
+ end
+ while (true) do
+    os.exit(gg.alert("❌𝑾𝒓𝒐𝒏𝒈 𝑲𝒆𝒚❌\n\n𝑬𝒏𝒕𝒆𝒓 𝑯𝒆𝒓𝒆 𝑪𝒐𝒓𝒓𝒆𝒄𝒕 𝑲𝒆𝒚 𝑭𝒐𝒓 𝑳𝒐𝒈𝒊𝒏💕", ""))
+ end
+end
+
+
+pass("MALIKXD", "AGGY", "𝒉HH𝒉", "𝒌𝒌G", "𝒍𝒍") -- Add All Keys Here !
+ 
+
+  local menu = gg.choice({
+    " • 👑𝗞𝗜𝗡𝗚 𝗥𝗔𝗡𝗞👑", 
+    " ❌ 𝗕𝗔𝗖𝗞 ❌ ",
+  }, nil, "┏━━━━━━━━⋆✪⋆━━━━━━━━┓\n➣ 👑𝙆𝙄𝙉𝙂 𝙍𝘼𝙉𝙆 𝘽𝙔 𝙈𝘼𝙇𝙄𝙆👑\n┗━━━━━━━━⋆✪⋆━━━━━━━━┛")
+  
+
+if menu == 1 then
+    IncreaseCoins()
+    elseif menu == 2 then
+    backMenu()
+  end
+end
+
+function backMenu() 
+lastMenu = "HOME"
+HOME()
+end
+
+  if input == nil then
+gg.setVisible(false)
+MENU = 0
+end
+    
+
+
+
+ 
+function kingrank() --kingrank
+
+local url = "https://cpm-rank.onrender.com/rank"
+
+
+gg.alert("Log out of your account before use, then click gg logo")
+gg.toast("When You Are Ready Then Click On GG icon")
+gg.sleep("2000")
+while true do
+if gg.isVisible() then
+break
+else
+gg.sleep(50)
+end end
+gg.setVisible(false)
+local input = gg.prompt({"Enter your email:", "Enter your password:"}, nil, {"text", "text"})
+if input == nil then
+gg.alert("✖️ Cancel ✖️")
+return
+end
+if not input or input[1]:match("^%s*$") or input[2]:match("^%s*$") then
+gg.alert("Email or password missing.")
+return
+end
+local res = gg.makeRequest(url, {["Content-Type"] = "application/json"},
+string.format('{"email":"%s","password":"%s"}', input[1], input[2]))
+if not res or res.code ~= 200 then
+return gg.alert("Error: " .. (res and res.code or "You are offline"))
+end
+local msg = res.content:match('"message"%s*:%s*"([^"]+)"') or "Rank set successfully!"
+gg.alert(msg)
+end
 
 
 while true do
@@ -7011,8 +7099,11 @@ premiumcar()
 elseif lastMenu == "bypassmenu" then
 MENU = 17
 bypassmenu()
-elseif lastMenu == "Info" then
+elseif lastMenu == "kingrankk" then
 MENU = 18
+kingrankk()			
+elseif lastMenu == "Info" then
+MENU = 19
 Info()			
 else
 MENU = 1
